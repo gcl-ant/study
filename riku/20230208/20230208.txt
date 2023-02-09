@@ -1,0 +1,170 @@
+import java.util.Arrays;
+
+/
+  java.util.Arrays:操作数组的工具类，里面定义了很多操作数组的方法
+  
+  
+ /
+public class ArraysTest {
+	public static void main(String[] args) {
+		
+		//1.boolean equals(int[] a,int[] b):判断两个数组是否相等。
+		int[] arr1 = new int[]{1,2,3,4};
+		int[] arr2 = new int[]{1,3,2,4};
+		boolean isEquals = Arrays.equals(arr1, arr2);
+		System.out.println(isEquals);
+		
+		//2.String toString(int[] a):输出数组信息。
+		System.out.println(Arrays.toString(arr1));
+		
+			
+		//3.void fill(int[] a,int val):将指定值填充到数组之中。
+		Arrays.fill(arr1,10);
+		System.out.println(Arrays.toString(arr1));
+		
+
+		//4.void sort(int[] a):对数组进行排序。
+		Arrays.sort(arr2);
+		System.out.println(Arrays.toString(arr2));
+		
+		//5.int binarySearch(int[] a,int key)
+		int[] arr3 = new int[]{-98,-34,2,34,54,66,79,105,210,333};
+		int index = Arrays.binarySearch(arr3, 210);
+		if(index >= 0){
+			System.out.println(index);
+		}else{
+			System.out.println("未找到");
+		}
+		
+		
+	}
+}
+
+
+/*练习
+ * 算法的考查：求数值型数组中元素的最大值、最小值、平均数、总和等
+ * 
+ * 定义一个int型的一维数组，包含10个元素，分别赋一些随机整数，
+ * 然后求出所有元素的最大值，最小值，和值，平均值，并输出出来。	
+ * 要求：所有随机数都是两位数。
+ * 
+ * [10,99]
+ * 公式：(int)(Math.random() * (99 - 10 + 1) + 10)
+ * 
+ */
+public class ArrayTest1 {
+	public static void main(String[] args) {
+		int[] arr = new int[10];
+		
+		for(int i = 0;i < arr.length;i++){
+			arr[i] = (int)(Math.random() * (99 - 10 + 1) + 10);
+		}
+		
+		//遍历
+		for(int i = 0;i < arr.length;i++){
+			System.out.print(arr[i] + "\t");
+		}
+		System.out.println();
+		
+		//求数组元素的最大值
+		int maxValue = arr[0];
+		for(int i = 1;i < arr.length;i++){
+			if(maxValue < arr[i]){
+				maxValue = arr[i];
+			}
+		}
+		System.out.println("最大值为：" + maxValue);
+		
+		//求数组元素的最小值
+		int minValue = arr[0];
+		for(int i = 1;i < arr.length;i++){
+			if(minValue > arr[i]){
+				minValue = arr[i];
+			}
+		}
+		System.out.println("最小值为：" + minValue);
+		//求数组元素的总和
+		int sum = 0;
+		for(int i = 0;i < arr.length;i++){
+			sum += arr[i];
+		}
+		System.out.println("总和为：" + sum);
+		//求数组元素的平均数
+		int avgValue = sum / arr.length;
+		System.out.println("平均数为：" + avgValue);
+	}
+}
+
+
+/*
+ * 数组的冒泡排序的实现
+ * 
+ */
+public class BubbleSortTest {
+	public static void main(String[] args) {
+		
+		int[] arr = new int[]{43,32,76,-98,0,64,33,-21,32,99};
+		
+		//冒泡排序
+		for(int i = 0;i < arr.length - 1;i++){
+			
+			for(int j = 0;j < arr.length - 1 - i;j++){
+				
+				if(arr[j] > arr[j + 1]){
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+				
+			}
+			
+		}
+		
+		
+		
+		for(int i = 0;i < arr.length;i++){
+			System.out.print(arr[i] + "\t");
+		}
+		
+	}
+}
+
+
+/*
+ * 数组中的常见异常：
+ * 1. 数组角标越界的异常：ArrayIndexOutOfBoundsExcetion
+ * 
+ * 2. 空指针异常：NullPointerException
+ * 
+ */
+public class ArrayExceptionTest {
+	public static void main(String[] args) {
+		
+		//1. 数组角标越界的异常：ArrayIndexOutOfBoundsExcetion
+		int[] arr = new int[]{1,2,3,4,5};
+		
+//		for(int i = 0;i <= arr.length;i++){
+//			System.out.println(arr[i]);
+//		}
+		
+//		System.out.println(arr[-2]);
+		
+//		System.out.println("hello");
+		
+		//2.2. 空指针异常：NullPointerException
+		//情况一：
+//		int[] arr1 = new int[]{1,2,3};
+//		arr1 = null;
+//		System.out.println(arr1[0]);
+		
+		//情况二：
+//		int[][] arr2 = new int[4][];
+//		System.out.println(arr2[0][0]);
+		
+		//情况三：
+		String[] arr3 = new String[]{"AA","BB","CC"};
+		arr3[0] = null;
+		System.out.println(arr3[0].toString());
+	}
+}
+
