@@ -34,7 +34,9 @@ public class homework {
         int3[1][1]=12;
         int3[1][2]=13;
         for (int[] itemOut:int3){
-            for (int itemIn: itemOut){System.out.println(itemIn);}
+            for (int itemIn: itemOut){
+                System.out.println(itemIn);
+            }
        }
-}
+    }
 }
