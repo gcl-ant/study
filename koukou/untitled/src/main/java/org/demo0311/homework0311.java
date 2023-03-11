@@ -16,9 +16,9 @@ public class homework0311 {
         //        难度：低
         System.out.println("作業1");
         String str1 = "1";
-        String str2 = "2";
+        String str2 = new String("1");
         System.out.println(str1 == str2);
-        System.out.println(str1 != str2);
+        System.out.println(str1.equals(str2));
         System.out.println("作業2");
         Integer a1 = 1;
         Integer a2 = 2;
@@ -33,6 +33,10 @@ public class homework0311 {
         i2[1][0] = 3;
         i2[1][1] = 4;
         i2[1][2] = 5;
+        for (int[] x:i2){
+            for(int y:x)
+                System.out.println(y);
+        }
         System.out.println("作業3-2");
         int[][] i3 = {{1,2},{3,4,5}};
         for (int[] n:i3){
