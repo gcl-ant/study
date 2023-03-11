@@ -27,7 +27,7 @@ public class text0310 {
         String st3 = st1 + st2;
         System.out.println(st3);
 
-        //-數組-
+        //數組
         int[] a1 = new int[]{1,2,3};
         int[] a2 = {10,20,30};//通常不+new
         Integer[] a3 = {new Integer(1),new Integer(2),new Integer(3)};
@@ -57,12 +57,6 @@ public class text0310 {
         System.out.println("--------------------");
         Arrays.stream(a2).forEach(item ->{System.out.println(item);});
         //Java API Arrays
-        System.out.println("--------------------");
-        Arrays.sort(a2);
-        for(int s:a2){
-            System.out.println(s);
-        }
 
     }
-
-    }
+}
