@@ -25,7 +25,7 @@ public class homework0311 {
         int b1 = a1+a2;
         int b2 = a1-a2;
         System.out.println(b1+b2);
-        System.out.println("作業3");
+        System.out.println("作業3-1");
         int[] i1 = {1,2,3};
         int[][] i2 = new int[2][3];
         i2[0][0] = 1;
@@ -33,5 +33,11 @@ public class homework0311 {
         i2[1][0] = 3;
         i2[1][1] = 4;
         i2[1][2] = 5;
+        System.out.println("作業3-2");
+        int[][] i3 = {{1,2},{3,4,5}};
+        for (int[] n:i3){
+            for(int m:n)
+            System.out.println(m);
+        }
     }
 }

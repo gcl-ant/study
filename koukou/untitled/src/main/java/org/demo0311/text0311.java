@@ -19,26 +19,28 @@ public class text0311 {
 //        降序??
 //        Arrays.sort(a,Collections.reverseOrder());
 
-        int[] intArr3 = {1,3,5};
-        for (int i = 0; i < intArr3.length; i++){
-            System.out.println(intArr3[i]);
+        int[] intArr = {1,3,5};
+        for (int i = 0; i < intArr.length; i++){
+            System.out.println(intArr[i]);
         }
-        //增強For循環
-        for (int n:intArr3){
+        for (int n:intArr){
             System.out.println(n);
         }
         System.out.println("--------------------");
         //算數
         int x = 0;
         int y = 0;
-        int n = x++;
-        int m = ++y;
         //a++ a+=1 a=a+1
-        for(int s:intArr3){
-            System.out.println(s);
+        for (int s = 0; s < intArr.length; s+=2){
+            System.out.println(intArr[s]);
+        }
+//        for(int s:intArr){
+//            int s1 = x++;
+//            int s2 = ++y;
+//            System.out.println(s);
 //            System.out.println(x++);
 //            System.out.println(++y);
-        }
+//        }
         System.out.println("--------------------");
         System.out.println(Boolean.TRUE&Boolean.TRUE);
         System.out.println(Boolean.TRUE&Boolean.FALSE);
@@ -58,17 +60,5 @@ public class text0311 {
 //        System.out.println("!|" + (!Objects.isNull(str2) & str2.length() == 1));
         System.out.println("||" + (true || str2.length() == 1));
 //        System.out.println("|" + (true | str2.length() == 1));
-
-//        作业1：
-//        题目：编写代码验证String的特性：直接用=赋值，相同内容的字符串实际是一个对象；用new赋值，每次都创建一个新的对象。
-//        考核点：字符串类，==作用
-//        难度：中
-//        作业2：
-//        题目：编写代码，验证自动装箱/拆箱的概念。
-//        考点：自动装箱/拆箱
-//        难度：低
-//        作业3：编写代码，声明一个int型数组，长度为3，使用三种方式为数组元素赋值为{1,2,3}；声明一个int型二维数组，一维和二维的长度分别是2和3，并分别进行赋值，具体值自行确定；
-//        考点：数组的声明与创建
-//        难度：低
     }
 }
