@@ -53,7 +53,7 @@ public class DebugClass {
 
         int[] aIntArr = {1, 2, 3};
 
-        Integer[] aIntArr2 = {11, 22, 33};
+        Integer[] aIntArr2 = {11, 22, 33,44,55,66};
 
         Integer[] aIntArr21 = {new Integer(1), new Integer(2), new Integer(3)};
 
@@ -83,6 +83,9 @@ public class DebugClass {
         // CTRL  + L
         System.out.println("普通FOR循环开始数组循环");
         // base for
+        //i 循环的下标
+        // i < aIntArr2.length  设定下标的最大值
+        //i++ 循环的步长  1
         for (int i = 0; i < aIntArr2.length; i++) {
             System.out.println("当前数组的下标是:" + i + ",对应的数组里存储的元素是:" + aIntArr2[i]);
         }
@@ -96,6 +99,7 @@ public class DebugClass {
         System.out.println("增强FOR循环结束数组循环");
 
         System.out.println("JDK8 循环开始数组循环");
+        //流
         Arrays.stream(aIntArr2).forEach(System.out::println);
         System.out.println("LAMBDA");
         Arrays.stream(aIntArr2).forEach(item ->{System.out.println("对应的数组里存储的元素是:" + item);});
@@ -108,5 +112,34 @@ public class DebugClass {
         //把第2项[c] 和第7项的值拼接出来，放到上面一步的数组中
         //使用基础FOR循环打印出新生成的数组
         //使用增强For循环打印出新生成数组的每个元素的长度  xxxx.length()
+
+
+        System.out.println("普通FOR循环开始数组循环2");
+        // base for
+        //i 循环的下标
+        // i < aIntArr2.length  设定下标的最大值
+        //i++ 循环的步长  2
+        //0   0+2    0+2+2   5 0+2+2+2
+        for (int i = 0; i < aIntArr2.length; i+=2) {
+            System.out.println("当前数组的下标是:" + i + ",对应的数组里存储的元素是:" + aIntArr2[i]);
+        }
+        System.out.println("普通FOR循环结束数组循环2");
+
+
+        int[] a11=new int[]{1,2,10};
+
+        for(int x:a11){
+            System.out.println(x);
+        }
+
+//        for(double x:a11){
+//            System.out.println(x);
+//        }
+
+        for(Integer x:a11){
+            System.out.println(x);
+        }
+
+
     }
 }
