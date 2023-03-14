@@ -24,26 +24,26 @@ public class study0311 {public static void main(String[] args) {
     System.out.println(a[8]);
     System.out.println(a[9]);
 // 2.3.把第2项和第5项的值拼接出来，放到一个新的字符串数组中
-//    String[] aa= new String[]{"a[2]" + "a[5]"};
-    StringBuffer aa = new StringBuffer(a[2]);
-    StringBuffer aa2 = new StringBuffer(a[5]);
-    aa.append(aa2);
-    System.out.println(aa);
-    String[] s = {"aa"};
-    System.out.println(s);
+    String[] aa= new String[]{a[2] + a[5]};
+//    StringBuffer aa = new StringBuffer(a[2]);
+//    StringBuffer aa2 = new StringBuffer(a[5]);
+//    aa.append(aa2);
+//    System.out.println(aa);
+//    String[] s = {"aa"};
+//    System.out.println(s);
 //// 2.4.把第2项和第6项的值拼接出来，放到上面一步的数组中
-    String[][] aaa = {{"a[2]" + "a[5]"}, {"a[2]" + "a[6]"}};
-    System.out.println(aaa);
+//    String[][] aaa = {{"a[2]" + "a[5]"}, {"a[2]" + "a[6]"}};
+//    System.out.println(aaa);
 // 2.5.把第2项和第7项的值拼接出来，放到上面一步的数组中
-    String[][] aab = {{"a[2]" + "a[5]"}, {"a[2]" + "a[6]"}, {"a[2]" + "a[7]"}};
+//    String[][] aab = {{"a[2]" + "a[5]"}, {"a[2]" + "a[6]"}, {"a[2]" + "a[7]"}};
 
 // 2.6.使用基础FOR循环打印出新生成的数组
-    for (int i = 0; i < aab.length; i++) {
-        System.out.println(aab[i]);
+    for (int i = 0; i < aa.length; i++) {
+        System.out.println(aa[i]);
     }
 // 2.7.使用增强FOR循环打印出新生成的数组的每个元素的长度 xxxx.length()
-    for (String[] item : aab) {
-        System.out.println(item);
+//    for (String[] item : aab) {
+//        System.out.println(item);
 //}
 
 
