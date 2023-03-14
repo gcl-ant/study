@@ -19,7 +19,7 @@ public class text0311 {
 //        降序??
 //        Arrays.sort(a,Collections.reverseOrder());
 
-        int[] intArr = {1,3,5};
+        int[] intArr = {1,3,5,7,9};
         for (int i = 0; i < intArr.length; i++){
             System.out.println(intArr[i]);
         }
@@ -44,7 +44,7 @@ public class text0311 {
         System.out.println("--------------------");
         System.out.println(Boolean.TRUE&Boolean.TRUE);
         System.out.println(Boolean.TRUE&Boolean.FALSE);
-        System.out.println(Boolean.TRUE&Boolean.FALSE);
+        System.out.println(Boolean.FALSE&Boolean.FALSE);
         System.out.println(Boolean.TRUE|Boolean.TRUE);
         System.out.println(Boolean.TRUE|Boolean.FALSE);
         System.out.println(Boolean.FALSE|Boolean.FALSE);
