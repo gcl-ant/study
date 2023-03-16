@@ -73,9 +73,11 @@ public class homework {
 度：中*/
 
                 for (int i = 1; i <= 100; i++) {
+                    // 记录i的真因子之和
                     int sum = 0;
                     for (int j = 1; j <= i / 2; j++) {
                         if (i % j == 0) {
+                            // j是i的真因子，记入到sum中
                             sum += j;
                         }
                     }
