@@ -42,21 +42,22 @@ public class day7 {
             System.out.println("i="+i);
         }
         int[]inArr11={1,2,3};
-        //for循环
-//        for (int i=0; i<inArr.length;i++){
-//            System.out.println("当前下标是"+i+"对应的数组值是"+inArr[i]);
-//        }
-        //for 增强循环演示
-        int array[] = { 1,2,3,4,5,6,7,8,9};
-        for (int item : array){
-            System.out.println(array);
+//        for循环
+        for (int i=0; i<inArr11.length;i++){
+            System.out.println("当前下标是"+i+"对应的数组值是"+inArr11[i]);
         }
+        //for 增强循环演示
+        int x[] = { 1,2,3,4,5,6,7,8,9};
+        for (int arr : x){
+            System.out.println(x);
+        }
+
 
     }
 //数组类型
         int[] inArr1=new int[2];
         int[] inArr2=new int[]{1,2,3};
 
-
     }
-}
+
+
