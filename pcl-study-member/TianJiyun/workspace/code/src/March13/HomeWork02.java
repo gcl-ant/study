@@ -1,3 +1,5 @@
+package code.src.main.March13.src.main.java;
+
 public class HomeWork02 {
     public static void main(String[] args) {
         System.out.println("10到105之间的素数有:");
@@ -13,7 +15,5 @@ public class HomeWork02 {
                 System.out.print(i + " ");
             }
         }
-
-
     }
 }

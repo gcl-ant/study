@@ -1,3 +1,5 @@
+package code.src.main.March13.src.main.java;
+
 public class HomeWork03 {
     public static void main(String[] args) {
         System.out.println("100到500之间水仙花数:");

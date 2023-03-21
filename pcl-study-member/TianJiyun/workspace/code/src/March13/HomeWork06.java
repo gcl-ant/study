@@ -1,3 +1,5 @@
+package code.src.main.March13.src.main.java;
+
 public class HomeWork06 {
     public static void main(String[] args) {
         System.out.println("2000年到3000年中的闰年:");

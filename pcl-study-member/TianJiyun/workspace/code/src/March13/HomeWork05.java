@@ -1,3 +1,5 @@
+package code.src.main.March13.src.main.java;
+
 public class HomeWork05 {
     public static void main(String[] args) {
         int num = 3456777;
