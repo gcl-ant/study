@@ -1,4 +1,4 @@
-package Day09;
+package day09;
 
 public class Bike {
     static final int staticInt = 10;

@@ -1,4 +1,4 @@
-package Day11And12;
+package day11And12;
 
 public class StaticDemo {
     static {
