@@ -6,7 +6,10 @@ public class StaticDemo {
     }
     {
         System.out.println("bbbb");
+
+        System.out.println("ccc");
     }
+
     public static void main(String[] args) {
         StaticDemo staticDemo = new StaticDemo();
         StaticDemo staticDemo2= new StaticDemo();
