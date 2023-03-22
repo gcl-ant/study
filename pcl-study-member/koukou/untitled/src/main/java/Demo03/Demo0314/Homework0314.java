@@ -4,39 +4,6 @@ import java.util.Arrays;
 
 public class Homework0314 {
     public static void main(String[] args) {
-//        int str1 = 123;
-//        String str2 = String.valueOf(123);
-//        char str3 = str2.charAt(1);
-//        System.out.println(str2.charAt(1));
-
-        int i01 = 214365;
-        String i02 = String.valueOf(i01);
-//        int i03 = i02.length();
-        char[] str11 = new char[i02.length()];
-        for (int aa = 0 ; aa <= 9 ; aa++){
-            str11[aa] = i02.charAt(aa);
-            aa = aa + 0;
-            System.out.println(str11[1]);
-//            Arrays.sort(str11);
-//            for(int x:str11){
-//                System.out.println(x);
-//            }
-        }
-//        int p = 123456;
-//        String q = String.valueOf(p);
-//        System.out.println(q.length()+"位數");
-//        int[] i1 = new int[i02.length()];
-//        String[] str2 = {str1};
-//        for (int r = q.length()-1; r >= 0 ; r--){
-//            System.out.print(q.charAt(r));
-//        }
-//        降序??
-//        Arrays.sort(a,Collections.reverseOrder());
-//        int[] intArr = {1,3,5,7,9};
-//        for (int i = 0; i < intArr.length; i++){
-//            System.out.println(intArr[i]);
-
-
 //            int n = 444555666;
 //            int reverse = 0;
 //            int digit = 0;

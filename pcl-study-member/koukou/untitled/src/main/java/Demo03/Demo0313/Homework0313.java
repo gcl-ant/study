@@ -7,18 +7,17 @@ public class Homework0313 {
 //    题目：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子。假如兔子都不死，要求输出一年内兔子的数量是多少。
 //    考点：流程控制
 //    难度：中
-    System.out.println("-----作業一-----");
-        int a = 0;
-        System.out.print("1月2隻,");
-        for (int b = 2 ; b <= 12 ; b++) {
-            if (b <= 3){
-                a = a + 2;
-            } else {
-                a = a + (b - 3) * 2;
-            }
-            System.out.print(b + "月" + a + "隻,");
-        }
-
+//    System.out.println("-----作業一-----");
+//        int a = 0;
+//        System.out.print("1月2隻,");
+//        for (int b = 2 ; b <= 12 ; b++) {
+//            if (b <= 3){
+//                a = a + 2;
+//            } else {
+//                a = a + (b - 3) * 2;
+//            }
+//            System.out.print(b + "月" + a + "隻,");
+//        }
 //    作业2：
 //    题目：判断10-105之间有多少个素数，并输出所有素数。【素数又称为质数，定义为在大于1的自然数中，除了1和它本身以外不再有其他因数的数】
 //    考点：流程控制、运算符
@@ -43,7 +42,7 @@ public class Homework0313 {
 //        }
         for (int num = 10 ; num <= 105 ; num++) {
             if ( num%2 > 0 && num%3 > 0 && num%5 > 0 && num%7 > 0){
-                System.out.print(num+",");
+                System.out.print(num+" ");
             }
         }
 //    作业3：
@@ -65,7 +64,7 @@ public class Homework0313 {
 //                    }
 //                }
 //            }
-            for (int hun = 0 ; hun <= 9; hun++){
+            for (int hun = 0 ; hun <= 5; hun++){
                 for (int ten = 0 ; ten <= 9 ; ten++){
                     for (int dig = 0 ; dig <= 9 ; dig++){
                         int hana = hun*hun*hun + ten*ten*ten + dig*dig*dig;
@@ -113,17 +112,17 @@ public class Homework0313 {
                 }
             }
         }
-        int sum=0;
-        for(int i=1;i<=100;i++) {
-            for(int j=1;j<i;j++) {
-                if(i%j==0) {
-                    sum=sum+j;
+        int num = 0;
+        for(int i = 1 ; i <= 100 ; i++ ) {
+            for(int j = 1 ; j < i ; j++ ) {
+                if( i % j == 0 ) {
+                    num = num + j;
                 }
             }
-            if(i==sum) {
+            if( i == num ) {
                 System.out.println(i);
             }
-            sum=0;
+            num = 0;
         }
 //    作业5：
 //    题目：判断一个整数是几位数，并按照逆序输出。
@@ -163,5 +162,9 @@ public class Homework0313 {
 //                }
 //            }
 //        }
+//        int endYear = 3000;
+//        for (int year = startYear; year <= endYear; year++) {
+//            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+//                System.out.println(year + " 是閏年。");
     }
 }
