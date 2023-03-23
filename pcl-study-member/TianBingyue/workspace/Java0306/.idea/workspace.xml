@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13cbb04c-bc1b-414d-82c3-0d73ead60757" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/day06/homework0313.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../homework/第四次课0311/作业.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../homework/第四次课0311/作业.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/day07/student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkDemo/Hero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkDemo/HeroSSR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkDemo/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkDemo/battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/day06/homework0313.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/day06/homework0313.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/day06/homework0313.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/day06/homework0313.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +50,26 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.homework0313">
+  <component name="RunManager" selected="Application.battle">
     <configuration name="Condition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Condition" />
       <module name="Java0306" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="battle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="homeworkDemo.battle" />
+      <module name="Java0306" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homeworkDemo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.battle" />
         <item itemvalue="Application.homework0313" />
         <item itemvalue="Application.hm0313" />
         <item itemvalue="Application.Condition" />
@@ -112,9 +132,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/day06/homework0313.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/homeworkDemo/battle.java</url>
           <line>2</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
