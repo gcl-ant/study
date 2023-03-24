@@ -1,4 +1,9 @@
 package Day14;
 
-public class AbstractTest {
+public abstract class AbstractTest {
+
+
+    public final void print(){
+        System.out.println("xxxxx");
+    }
 }
