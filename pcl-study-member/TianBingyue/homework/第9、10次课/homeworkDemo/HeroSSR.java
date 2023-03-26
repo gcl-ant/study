@@ -9,6 +9,7 @@ public class HeroSSR {
 
 
 
+
     public HeroSSR(String name){
         this.name = "ONE PUNCH MAN";
         this.experience = 0;
