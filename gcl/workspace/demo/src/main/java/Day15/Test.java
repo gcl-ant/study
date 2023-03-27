@@ -19,5 +19,9 @@ public class Test {
         hero4.printInfo();
 
 //        System.out.println(hero3.calcExp(30));
-    }
+
+//        Tank huShi = new Tank();
+
+        Interface3 interface3 = new Interface3();
+        interface3.print4();    }
 }
