@@ -3,6 +3,7 @@ package Day16;
 public interface IA {
 
     //终身学习
+
     //必须是 public、static 和 final 修饰符的常量，因为接口中的成员变量默认是 public static final 的。
     //由于成员变量是 final 的，所以它们必须在定义时被初始化，且不能再被修改。
     //成员变量通常会被定义为接口的属性或配置项。
