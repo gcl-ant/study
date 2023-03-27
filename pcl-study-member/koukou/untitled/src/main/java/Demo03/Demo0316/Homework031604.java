@@ -20,7 +20,5 @@ public class Homework031604 {
             System.out.print(number % 10);
             number /= 10;
         }
-        System.out.println();
-        System.out.println("----------------05-------------");
     }
 }

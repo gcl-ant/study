@@ -21,5 +21,4 @@ public class Text0316 {
             }
         }
     }
-    //預習到 PPT-4.p42
 }

@@ -49,7 +49,6 @@ public class Text0313 {
         }
         //此時這邊找的到i1
         //此時這邊找不到i2
-        System.out.println("----------");
         //三元運算符
         String strstr = "abc";
         int i01 = 1;

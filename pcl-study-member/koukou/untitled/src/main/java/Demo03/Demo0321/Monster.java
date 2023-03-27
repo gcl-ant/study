@@ -5,10 +5,12 @@ public class Monster {
     int level;
     int hp;
 
-//    Monster(int level){
-//        this.level = level;
-//        this.hp = this.level*1000;
-//    }
+    public int getLife() {
+        return hp;
+    }
+    public void setLife(int hp) {
+        this.hp = hp;
+    }
     Monster(String name,int level){
         this.level = level;
         this.hp = this.level*1000;
