@@ -1,5 +1,7 @@
 package Day16;
 
+import Day17.OuterClass;
+
 public class Test {
     public static void main(String[] args) {
         //向上转型
@@ -13,6 +15,7 @@ public class Test {
 //
 //        IA in = new TestIAB();
 //        in.m();
+//        OuterClass outerClass = new OuterClass();
 
 
     }
