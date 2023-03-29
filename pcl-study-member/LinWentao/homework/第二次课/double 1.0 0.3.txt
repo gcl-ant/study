@@ -1,0 +1,4 @@
+https://blog.csdn.net/qq_41250629/article/details/128771772?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-128771772-blog-114377615.235%5Ev27%5Epc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-128771772-blog-114377615.235%5Ev27%5Epc_relevant_3mothn_strategy_recovery&utm_relevant_index=1
+
+
+同类型的离散数据（精度）相等，不同则不相等（仅限于浮点数），整数是不考虑精度问题的。
