@@ -9,10 +9,10 @@ public class LambdaHomework {
     public static void main(String[] args) {
         LambdaHomework lambdaHomework = new LambdaHomework();
         System.out.println(lambdaHomework.i1.method1());
-        System.out.println(lambdaHomework.i2.method2(3));
-        System.out.println(lambdaHomework.i3.method3(8, 4));
-        System.out.println(lambdaHomework.i4.method4(4, 7));
-        lambdaHomework.i5.method5("Hello Moto");
+        System.out.println(lambdaHomework.i2.method2(10));
+        System.out.println(lambdaHomework.i3.method3(1, 2));
+        System.out.println(lambdaHomework.i4.method4(2, 3));
+        lambdaHomework.i5.method5("hello world");
     }
 }
 interface I1{
