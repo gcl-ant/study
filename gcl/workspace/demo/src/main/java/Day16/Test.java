@@ -1,7 +1,5 @@
 package Day16;
 
-import Day17.OuterClass;
-
 public class Test {
     public static void main(String[] args) {
         //向上转型
