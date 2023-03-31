@@ -10,6 +10,7 @@ public class Hero {
     }
 
     public Hero(int exp) {
+
         this.calLevel(exp);
     }
 
@@ -18,20 +19,20 @@ public class Hero {
         return level;
     }
 
-    public void setLevel(int level) {
-
-        this.level = level;
-    }
+//    public void setLevel(int level) {
+//
+//        this.level = level;
+//    }
 
     public int getExp() {
 
         return exp;
     }
 
-    public void setExp(int exp) {
-
-        this.exp = exp;
-    }
+//    public void setExp(int exp) {
+//
+//        this.exp = exp;
+//    }
 
     private void calLevel(int exp) {
         int[] exps = new int[30];

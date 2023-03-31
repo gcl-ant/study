@@ -1,0 +1,11 @@
+第二次
+// byte int转换   b=1 大范围无法转换小范围   但可以强制转换 b = （byte）i  数据值会超出范围，
+    //java 类型  基本数据类型（数值型 字符型char 布尔 true or false）  string integer 是引用类型
+    // string[]  字符串
+    //long   short十位    int类型  百以内
+    //声明默认值，不要留空  char 空字符 ''    string 基础类型 可以为空
+
+    //基本数据类型不够用， 引用数据类型
+    //==  !=不等于号  <  >  >= <=  !
+
+string  integer 是引用类型

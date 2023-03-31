@@ -15,16 +15,18 @@ public class homework {
         System.out.println("----------------01-------------");
 
         System.out.println("----------------02-------------");
-        for (int i1 = 5; i1 <= 105; i1++) {
-            for (int j1 = 2; j1 <= i1; j1++) {
-                if (i1 % j1 == 0 && i1 != j1) {
+        int count=0;
+        for (int i1 = 10; i1 <= 105; i1++) {
+            for (int j1 = 2; j1 <= Math.sqrt(i1); j1++) {
+                if (i1 % j1 == 0 ) {
                     break;
                 }
-                if (j1 == i1) {
+                if (j1 == i1) { count++;
                     System.out.println("质数：i1= " + i1);
                 }
             }
-        }
+        }System.out.println("共有"+count+"个质数");
+
         System.out.println("----------------02-------------");
 
         System.out.println("----------------03-------------");
@@ -42,7 +44,7 @@ public class homework {
         System.out.println("----------------03-------------");
 
         System.out.println("----------------04-------------");
-        for (int i3 = 1; i3 <= 100; i3++) {
+        for (int i3 = 1; i3 <= 500; i3++) {
             int sum =0;
             for (int j3 = 1; j3 < i3; j3++) {
                 if (i3 % j3 == 0) {
@@ -74,6 +76,7 @@ public class homework {
                 System.out.print(number % 10);
                 number /= 10;
             }
+        System.out.println();
         System.out.println("----------------05-------------");
 
         System.out.println("----------------06-------------");

@@ -19,8 +19,7 @@ public class homework0313 {public static void main(String[] args) {
     //2000-3000年中的闰年
     for(int i2=2000;i2<=3000;i2++){
 //    for(int i2;2000<=i2<=3000;i2++){
-        if(i2%4!=0)
-//        ;i2%100!=0)    如何加入两个条件？
+        if(i2%4!=0&&i2%100!=0)    //如何加入两个条件？
         {
                     continue;
         }
