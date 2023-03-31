@@ -7,7 +7,7 @@ public interface TestInfo<T> {
 
 //    void accept(T t);
 
-    void accept2();
+    void accept2(String s);
 
     default void print(){
         System.out.println("aaaa");

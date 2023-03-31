@@ -33,10 +33,8 @@ public class Test2 {
 //        print2.accept("vvvvvv");
 //
 //        TestInfo<Integer> print3 = (Integer s) -> System.out.println(s);
-//        print3.accept(new Integer(3));
+////        print3.accept(new Integer(3));
 
-        TestInfo<String> print3 = () -> System.out.println("abc");
-        print3.accept2();
 
     }
 }
