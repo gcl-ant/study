@@ -1,3 +1,20 @@
+原因：在比较时，会把十进制数转换为二进制
+        0.3在转二进制后为0.01001001001.....的无限循环小数
+        而double和float类型的精度不同，所以0.3d不等于0.3f
+        而1.0不存在这个问题，所以1.0d=1.0f
+        1.0f  1.0d 的二进制表示，不管是32位还是64位，都是相同的。
+        0.3f  0.3d的二进制表示，32位和64位不同，所以是false
+
+        0.3f转换为二进制   每次*2取整作为二进制位，小数部分继续*2
+        0.3x2=0.6 取0
+        0.6x2=1.2 取1
+        0.2x2=0.4 取0
+        0.4x2=0.8 取0
+        0.8x2=1.6 取1
+        0.6x2=1.2 取1
+        开始循环
+        所以结果0.01001 1001 1001……
+      
 https://blog.csdn.net/qq_41250629/article/details/128771772?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-128771772-blog-114377615.235%5Ev27%5Epc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-128771772-blog-114377615.235%5Ev27%5Epc_relevant_3mothn_strategy_recovery&utm_relevant_index=1
 
 
