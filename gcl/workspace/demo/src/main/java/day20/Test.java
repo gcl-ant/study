@@ -90,28 +90,30 @@ public class Test {
         //            store.buyProduct("商品3");
         //            store.buyProduct("商品4");
         //            store.buyProduct("");
+
+//        aaaa
         try{
-            store.buyProduct("商品2");
+            store.buyProductOld("商品2");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
         try{
-            store.buyProduct("商品1");
+            store.buyProductOld("商品1");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
         try{
-            store.buyProduct("商品3");
+            store.buyProductOld("商品3");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
         try{
-            store.buyProduct("商品4");
+            store.buyProductOld("商品4");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
         try{
-            store.buyProduct("");
+            store.buyProductOld("");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
