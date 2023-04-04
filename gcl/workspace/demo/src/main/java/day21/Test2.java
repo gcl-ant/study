@@ -21,31 +21,5 @@ public class Test2 {
             ex.printStackTrace();
         }
 
-//        try {
-//            File file = new File("data.bin");
-//            fos = new FileOutputStream(file, true);
-//
-//            dos = new DataOutputStream(fos);
-//            dos.writeInt(100);
-//            dos.writeDouble(3.141592654);
-//            dos.writeUTF("aaaaaaavbbbbbb");
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        } finally {
-//            if (dos != null) {
-//                try {
-//                    dos.close();
-//                } catch (IOException ex) {
-//                    ex.printStackTrace();
-//                }
-//            }
-//            if (fos != null) {
-//                try {
-//                    fos.close();
-//                } catch (IOException ex) {
-//                    ex.printStackTrace();
-//                }
-//            }
-//        }
     }
 }
