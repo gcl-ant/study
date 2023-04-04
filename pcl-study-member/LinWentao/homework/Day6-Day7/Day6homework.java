@@ -133,13 +133,12 @@ public class Day6homework {
                 System.out.println(a >= 10000 && a <= 99999);
                 System.out.println(a + "是五位数");
                 break;
-
         }
         //    int n = 87654321;
 //            int reverse = 0;
 //            int digit = 0;
 //            boolean isNegative = false;
-//            // 如果输入的整数是负数，先转换为正数
+              // 如果输入的整数是负数，先转换为正数
 //            if (n < 0) {
 //                n = -n;
 //                isNegative = true;
@@ -149,7 +148,6 @@ public class Day6homework {
 //                n = n / 10;
 //                digit++;
 //            }
-//            System.out.println("该整数是 " + digit + " 位数。");
 //            // 如果输入的整数是负数，输出时加上负号
 //            if (isNegative) {
 //                System.out.println("它的逆序数是 -" + reverse + "。");
@@ -160,7 +158,7 @@ public class Day6homework {
             //for (int i4 = num.length() - 1; i4 >= 0; i4--) {
             //System.out.print(num.charAt(i4));
 
-            //另一种 方法  每次都整除10，用计数器计数。直到整除结果变0，循环结束;正负数情况
+            //另一种 方法  每次都整除10，用计数器计数。
             int b = 123456;
             int c = b;
             int i5 = 0;
@@ -168,7 +166,8 @@ public class Day6homework {
                 c /= 10;
                 i5++;
             }
-            System.out.println("这是一个" + i5 + "位数");
+
+        System.out.println("这是一个" + i5 + "位数");
         }
 
     }
