@@ -3,7 +3,7 @@ package Day6;
 public class Day6homework {
     public static void main(String[] args) {
 
-    //作业1：
+        //作业1：
       /*题目：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子。假如兔子都不死，要求输出一年内兔子的数量是多少。
         考点：流程控制
         输入月份2<n<13
@@ -51,6 +51,7 @@ public class Day6homework {
         System.out.println("共有" + count + "个素数");
 
 
+
     /* 作业3：
     题目：判断100到500之间，哪些数是水仙花数。
     【水仙花数是指一个 n 位正整数 ( n≥3 )，它的每个位上的数字的 n 次幂之和等于它本身。（例如：1^3 + 5^3+ 3^3 = 153）】
@@ -77,14 +78,14 @@ public class Day6homework {
     它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。例如：6=1+2+3】
     考点：流程控制、运算符
     */
-        for (int i3 = 1; i3 <= 100 ; i3++) {
+        for (int i3 = 1; i3 <= 100; i3++) {
             int sum = 0;
-            for (int j1 = 1; j1 < i3 ; j1++) {
-                if(i3 % j1 == 0){
+            for (int j1 = 1; j1 < i3; j1++) {
+                if (i3 % j1 == 0) {
                     sum += j1;
                 }
             }
-            if(sum == i3){
+            if (sum == i3) {
                 System.out.println(i3 + "是完美数");
             }
         }
@@ -95,32 +96,79 @@ public class Day6homework {
     //考点：流程控制、运算符、数组
 */
         int a = 1234566;
-        String num=String.valueOf(a);
-        System.out.println("这个数是"+num.length()+"位数");
-        if(a >= 0 && a <= 9) {
-            System.out.println( a + "是一位数");
-        } else if(a >= 10 && a <= 99) {
+        String num = String.valueOf(a);
+        System.out.println("这个数是" + num.length() + "位数");
+        if (a >= 0 && a <= 9) {
+            System.out.println(a + "是一位数");
+        } else if (a >= 10 && a <= 99) {
             System.out.println(a + "是二位数");
-        } else if(a >= 100 && a <= 999) {
+        } else if (a >= 100 && a <= 999) {
             System.out.println(a + "是三位数");
-        } else if(a >= 1000 && a <= 9999) {
+        } else if (a >= 1000 && a <= 9999) {
             System.out.println(a + "是四位数");
-        } else if(a >= 10000 && a <= 99999) {
+        } else if (a >= 10000 && a <= 99999) {
             System.out.println(a + "是五位数");
         }
-        //逆序？ for (int i2 = num.length()-1; i2 >= 0 ; i2--){
-        //System.out.print(num.charAt(i2));
-        //
 
-        //另一种 方法  每次都整除10，用计数器计数。直到整除结果变0，循环结束;正负数情况
-        int b = 123456;
-        int c = b;
-        int i4 = 0;
-        while (c > 0){
-            c /= 10;
-            i4++;
+        //switch
+        System.out.println("=======switch======");
+        switch (a) {
+            case 1:
+                System.out.println("a >= 0 && a <= 9");
+                System.out.println(a + "是一位数");
+                break;
+            case 2:
+                System.out.println("a >= 10 && a <= 99");
+                System.out.println(a + "是二位数");
+                break;
+            case 3:
+                System.out.println("a >= 100 && a <= 999");
+                System.out.println(a + "是三位数");
+                break;
+            case 4:
+                System.out.println(a >= 1000 && a <= 9999);
+                System.out.println(a + "是四位数");
+                break;
+            case 5:
+                System.out.println(a >= 10000 && a <= 99999);
+                System.out.println(a + "是五位数");
+                break;
+
         }
-        System.out.println("这是一个" + i4+ "位数");
+        //    int n = 87654321;
+//            int reverse = 0;
+//            int digit = 0;
+//            boolean isNegative = false;
+//            // 如果输入的整数是负数，先转换为正数
+//            if (n < 0) {
+//                n = -n;
+//                isNegative = true;
+//            }
+//            while (n != 0) {
+//                reverse = reverse * 10 + n % 10;
+//                n = n / 10;
+//                digit++;
+//            }
+//            System.out.println("该整数是 " + digit + " 位数。");
+//            // 如果输入的整数是负数，输出时加上负号
+//            if (isNegative) {
+//                System.out.println("它的逆序数是 -" + reverse + "。");
+//            } else {
+//                System.out.println("它的逆序数是 " + reverse + "。");
+//            }
+
+            //for (int i4 = num.length() - 1; i4 >= 0; i4--) {
+            //System.out.print(num.charAt(i4));
+
+            //另一种 方法  每次都整除10，用计数器计数。直到整除结果变0，循环结束;正负数情况
+            int b = 123456;
+            int c = b;
+            int i5 = 0;
+            while (c > 0) {
+                c /= 10;
+                i5++;
+            }
+            System.out.println("这是一个" + i5 + "位数");
         }
 
     }
