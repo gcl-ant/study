@@ -50,16 +50,28 @@ public class Day6homework {
         }
         System.out.println("共有" + count + "个素数");
 
-
+    //讲解
+    /*    for (int i = 10; i <= 105; i++) {
+            boolean temp = true;
+            for (int j = 2; j < i; j++) {
+                if(i % j == 0){
+                    temp = false;
+                    break;
+                }
+            }
+            if(temp == true){
+                System.out.print(i + " ");
+            }
+        }*/
 
     /* 作业3：
     题目：判断100到500之间，哪些数是水仙花数。
     【水仙花数是指一个 n 位正整数 ( n≥3 )，它的每个位上的数字的 n 次幂之和等于它本身。（例如：1^3 + 5^3+ 3^3 = 153）】
     考点：流程控制、运算符
     数 abc
-    个位数c：abc%10;（求余）
-    百位数a: abc/100;（取整）
-    十位数b: (abc/10)%10;或者：b=(abc%100)/10;
+    个位数a：abc%10;
+    十位数b: (abc/10)%10;
+    百位数c: abc/100;
 */
         for (int i2 = 100; i2 <= 500; i2++) {
             int a = i2 % 10;
@@ -75,13 +87,13 @@ public class Day6homework {
     /* 作业4：
     题目：求1-100之间，有哪些数是完数。
     完全数（Perfect number），又称完美数或完备数，是一些特殊的自然数。
-    它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。例如：6=1+2+3】
+    它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。例如：6=1+2+3
     考点：流程控制、运算符
-    */
+    */ // 求真因子 和 求真因子和
         for (int i3 = 1; i3 <= 100; i3++) {
             int sum = 0;
             for (int j1 = 1; j1 < i3; j1++) {
-                if (i3 % j1 == 0) {
+                if (i3 % j1 == 0) {  //是真因子数
                     sum += j1;
                 }
             }
@@ -134,29 +146,6 @@ public class Day6homework {
                 System.out.println(a + "是五位数");
                 break;
         }
-        //    int n = 87654321;
-//            int reverse = 0;
-//            int digit = 0;
-//            boolean isNegative = false;
-              // 如果输入的整数是负数，先转换为正数
-//            if (n < 0) {
-//                n = -n;
-//                isNegative = true;
-//            }
-//            while (n != 0) {
-//                reverse = reverse * 10 + n % 10;
-//                n = n / 10;
-//                digit++;
-//            }
-//            // 如果输入的整数是负数，输出时加上负号
-//            if (isNegative) {
-//                System.out.println("它的逆序数是 -" + reverse + "。");
-//            } else {
-//                System.out.println("它的逆序数是 " + reverse + "。");
-//            }
-
-            //for (int i4 = num.length() - 1; i4 >= 0; i4--) {
-            //System.out.print(num.charAt(i4));
 
             //另一种 方法  每次都整除10，用计数器计数。
             int b = 123456;
@@ -166,7 +155,6 @@ public class Day6homework {
                 c /= 10;
                 i5++;
             }
-
         System.out.println("这是一个" + i5 + "位数");
         }
 
