@@ -40,10 +40,12 @@ public class Hero {
 
     public static void main(String[] args) {
         Hero hero1 = new Hero();
-        Hero hero2 = new Hero(123456);
+        Hero hero2 = new Hero(6543211);
+        Hero hero3 = new Hero(-100);
 
         System.out.println("Hero1的等级为：" + hero1.getLevel() + "，经验值为：" + hero1.getExp());
         System.out.println("Hero2的等级为：" + hero2.getLevel() + "，经验值为：" + hero2.getExp());
+        System.out.println("Hero3的等级为：" + hero3.getLevel() + "，经验值为：" + hero3.getExp());
     }
 }
 
