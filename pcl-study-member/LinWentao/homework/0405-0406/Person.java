@@ -11,8 +11,22 @@ public class Person {
         this.gender = gender;
         this.height = height;
     }
-    public void Personinfo() { //输出个人信息 方法x
-        System.out.println("Name: " + name);
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void Personinfo() {
+        System.out.println("Name: " +name);
         System.out.println("Age: " + age);
         System.out.println("Gender: " + gender);
         System.out.println("height"+height);
@@ -21,7 +35,7 @@ public class Person {
 
      /* Person Person1=new Person();
         Person1.setName("小明");
-        Person1.setAge(25);
+        Person1.setAge(25);x
         Person1.setGender("Male");
         Person1.setHeight(188.0);
         System.out.println("name:" + Person1.getName());
