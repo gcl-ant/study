@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13cbb04c-bc1b-414d-82c3-0d73ead60757" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/musicplayer/music.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/homeworkApirl/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Text">
+  <component name="RunManager" selected="Application.Calculator">
     <configuration name="BankAccount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homeworkApirl.BankAccount" />
       <module name="Java0306" />
@@ -117,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Text" />
         <item itemvalue="Application.Calculator" />
+        <item itemvalue="Application.Text" />
         <item itemvalue="Application.BankAccount" />
         <item itemvalue="Application.Student" />
         <item itemvalue="Application.FileWithDateOutputStreamTest" />
@@ -159,6 +156,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/day18/Person.java</url>
           <line>2</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/homeworkApirl/Shape.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/day18/Person.java</url>
