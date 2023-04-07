@@ -1,10 +1,10 @@
 package D0405题目;
 
 public class Person {
-    String name;
-    int age;
-    String gender;
-    double height;
+    private String name;
+    private int age;
+    private String gender;
+    private double height;
     Person(String name, int age, String gender,double height) {
         this.name = name;
         this.age = age;
