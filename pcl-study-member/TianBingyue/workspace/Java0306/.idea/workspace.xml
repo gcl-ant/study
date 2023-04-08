@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13cbb04c-bc1b-414d-82c3-0d73ead60757" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/musicplayer/music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/day24/TestCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/day24/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/musicplayer/Mplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/homeworkApirl/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Calculator">
+  <component name="RunManager" selected="Application.TestCollection">
     <configuration name="BankAccount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homeworkApirl.BankAccount" />
       <module name="Java0306" />
@@ -73,25 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileWithDateOutputStreamTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day21.FileWithDateOutputStreamTest" />
+    <configuration name="TestCollection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day24.TestCollection" />
       <module name="Java0306" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day21.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Student" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="homeworkApirl.Student" />
-      <module name="Java0306" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="homeworkApirl.*" />
+          <option name="PATTERN" value="day24.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,13 +100,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="day24.Text" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day24.Text" />
+      <module name="Java0306" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day24.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestCollection" />
+        <item itemvalue="Application.day24.Text" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.Text" />
         <item itemvalue="Application.BankAccount" />
-        <item itemvalue="Application.Student" />
-        <item itemvalue="Application.FileWithDateOutputStreamTest" />
       </list>
     </recent_temporary>
   </component>
