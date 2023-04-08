@@ -19,8 +19,6 @@ public class HomeWork1 {
         }
 
 //        System.out.println(result);
-
-
         for(int i = 0;i<299;i++){
             int result = proxy.substract(3,4);
         }
