@@ -3,22 +3,19 @@ package Demo04.Demo0404.Homework0404;
 public class BankAccount {
     String name;
     int password;
-    int oldmoney;
-    int newmoney;
+    int money;
     public BankAccount(String name,int password){
         this.name = name;
         this.password = password;
     }
-    public void putmoney(int password,int newmoney){
+    public void putmoney(int password,int putmoney){
         if(this.password == password){
-            this.newmoney = newmoney + oldmoney;
-            this.oldmoney = this.newmoney;
+            this.money += putmoney;
         }
     }
-    public void getmoney(int password,int oldmoney){
+    public void getmoney(int password,int getmoney){
         if(this.password == password){
-            this.newmoney = newmoney - oldmoney;
-            this.oldmoney = this.newmoney;
+            this.money -= getmoney;
         }
     }
 }
@@ -28,14 +25,14 @@ class Ginnkou{
         BankAccount bankAccount2 = new BankAccount("boku",987654321);
 
         bankAccount1.putmoney(123456789,1000);
-        System.out.println(bankAccount1.newmoney);
+        System.out.println(bankAccount1.money);
         bankAccount1.putmoney(123456788,200);
-        System.out.println(bankAccount1.newmoney);
+        System.out.println(bankAccount1.money);
         bankAccount1.putmoney(123456789,800);
-        System.out.println(bankAccount1.newmoney);
+        System.out.println(bankAccount1.money);
         bankAccount1.getmoney(123456788,500);
-        System.out.println(bankAccount1.newmoney);
+        System.out.println(bankAccount1.money);
         bankAccount1.getmoney(123456789,500);
-        System.out.println(bankAccount1.newmoney);
+        System.out.println(bankAccount1.money);
     }
 }
