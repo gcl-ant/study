@@ -3,14 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>test29</title>
+  <!-- base 会根据我们写的一个href地址从而影响我们html的加载 -->
+<!--    <base href="http://www.runoob.com/images/" target="_blank">-->
+
+  <!-- http://www.runoob.com/images/css/mystyle.css -->
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <style>
+      /*ID选择器*/
+      #aaa{
+        color: aqua;
+      }
+
+      /*类选择器*/
+      .a111{
+        color: bisque !important;
+      }
+
+      /*标签选择权*/
+      p{
+        color: chartreuse;
+      }
+
+      /*属性选择器*/
+      p[name="a111zz"]{
+        color: chartreuse;
+      }
+
+      /*伪选择器*/
+      p[name="a111zz"]:hover{
+        color: red;
+        background-color: #dbe3ff;
+      }
+    </style>
+
+  <script>
+    document.write("Hello World!")
+  </script>
 </head>
 <body>
 <!-- 这是一个注释 -->
-<p>这是一个段落。</p>
-<hr><br>
+<h4>一列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+  </tr>
+</table>
+
+<h4>一行三列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+</table>
+
+<h4>两行三列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+
+<h4>跨行:</h4>
+<table border="1">
+  <tr>
+    <td rowspan="2">100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+
+<h4>跨列:</h4>
+<table border="1">
+  <tr>
+    <td colspan="2">100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+<hr>
+<h1 style="text-align:center;">居中对齐的标题</h1>
 <p>这是一个段落。</p>
 <hr>
-<p>这是一个段落。</p>
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+<hr>
+<p class="page111" style="color: blue">这是一个段落。aaaxxx</p>
+<hr><br>
+<p id="aaa">这是一个段落。</p>
+<hr>
+<p class="a111">这是一个段落。22</p>
+<p class="a111">这是一个段落。33</p>
+
+<p class="a111" id="aaa">这是一个段落xxxx。</p>
+
+<p name="a111zz">这是一个段落。33</p>
 
 <h1>这是1号标题</h1>
 <font size="6" style="font-weight: bolder">这是6号字体文本</font>
