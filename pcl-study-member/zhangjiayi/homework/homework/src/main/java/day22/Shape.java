@@ -1,6 +1,6 @@
 package day22;
 
-public class Shape {
+public abstract class Shape {
     protected double area;
     protected double perimeter;
 
