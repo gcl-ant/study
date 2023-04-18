@@ -68,8 +68,8 @@ public static void main(String[] args) {
         sum += stus[i].getGrade();
     }
 
-//        System.out.println("平均成绩：" + (sum* 1.0 / 4));
-//
+        System.out.println("平均成绩：" + (sum* 1.0 / 4));
+
 //    System.out.println(stu1.getStudentNo());
 //    System.out.println(stu1.getName());
 //    System.out.println(stu1.getSex());
@@ -78,8 +78,7 @@ public static void main(String[] args) {
 //    System.out.println(stu2.getName());
 //    System.out.println(stu2.getSex());
 //    System.out.println(stu2.getAge());
-//    stu1=null;
-//    stu2=null;
+//
 
     }
 
