@@ -1,16 +1,15 @@
-//package homeworkApirl;
-//
-//public class Shape {
-//    private float S;
-//    public float s{
-//        get
-//    {
-//        return S;
-//    }
-//        set
-//        {
-//            s = value;
-//        }
-//        public vir
-//    }
-//}
+package homeworkApirl;
+
+//Shape类的创建
+public class Shape {
+    //求面积的方法
+    public double getArea() {
+        return 0;
+    }
+
+    //求周长的方法
+    public double getC() {
+        return 0;
+    }
+}
+

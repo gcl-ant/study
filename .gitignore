@@ -5,3 +5,7 @@ gcl/workspace/demo/target/classes/Day16/Test.class
 gcl/workspace/demo/target/classes/Day17/OuterClass.class
 gcl/workspace/demo/target/classes/Day17/Test.class
 *.class
+*.iml
+*.html
+*.code-workspace
+*.xml

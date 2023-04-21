@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test29</title>
+  <!-- base 会根据我们写的一个href地址从而影响我们html的加载 -->
+<!--    <base href="http://www.runoob.com/images/" target="_blank">-->
+
+  <!-- http://www.runoob.com/images/css/mystyle.css -->
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <style>
+      /*ID选择器*/
+      #aaa{
+        color: aqua;
+      }
+
+      /*类选择器*/
+      .a111{
+        color: bisque !important;
+      }
+
+      /*标签选择权*/
+      p{
+        color: chartreuse;
+      }
+
+      /*属性选择器*/
+      p[name="a111zz"]{
+        color: chartreuse;
+      }
+
+      /*伪选择器*/
+      p[name="a111zz"]:hover{
+        color: red;
+        background-color: #dbe3ff;
+      }
+    </style>
+
+  <script>
+    document.write("Hello World!")
+  </script>
+</head>
+<body>
+<!-- 这是一个注释 -->
+<h4>一列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+  </tr>
+</table>
+
+<h4>一行三列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+</table>
+
+<h4>两行三列:</h4>
+<table border="1">
+  <tr>
+    <td>100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+
+<h4>跨行:</h4>
+<table border="1">
+  <tr>
+    <td rowspan="2">100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+
+<h4>跨列:</h4>
+<table border="1">
+  <tr>
+    <td colspan="2">100</td>
+    <td>200</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>500</td>
+    <td>600</td>
+  </tr>
+</table>
+<hr>
+<h1 style="text-align:center;">居中对齐的标题</h1>
+<p>这是一个段落。</p>
+<hr>
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+<hr>
+<p class="page111" style="color: blue">这是一个段落。aaaxxx</p>
+<hr><br>
+<p id="aaa">这是一个段落。</p>
+<hr>
+<p class="a111">这是一个段落。22</p>
+<p class="a111">这是一个段落。33</p>
+
+<p class="a111" id="aaa">这是一个段落xxxx。</p>
+
+<p name="a111zz">这是一个段落。33</p>
+
+<h1>这是1号标题</h1>
+<font size="6" style="font-weight: bolder">这是6号字体文本</font>
+<br>
+<font size="6" style="font-weight: bolder">这是6号字体文本</font>
+
+<h2>这是2号标题</h2>
+<font size="5">这是5号字体文本</font>
+
+<h3>这是3号标题</h3>
+<font size="4">这是4号字体文本</font>
+
+<h4>这是4号标题</h4>
+<font size="3">这是3号字体文本</font>
+
+<h5>这是5号标题</h5>
+<font size="2">这是2号字体文本</font>
+
+<h6>这是6号标题</h6>
+<font size="1">这是1号字体文本</font>
+
+
+<p>这是一个段落 </p>
+<p>这是另一个段落</p>
+
+<p>这个<br>段落<br>演示了分行的效果</p>
+
+<div class="example_result" style="font-size:120%;">
+  <strong>加粗文本</strong><br><br>
+  <i>斜体文本</i><br><br>
+  <em style="font-style: italic;">斜体文本</em><br><br>
+  <code>电脑自动输出</code><br><br>
+  这是<sub> 下标</sub> 和<sup> 上标</sup><br>
+  <ins>ssss</ins>
+  <del>aaaa</del>
+  <br>
+  <code>一段电脑代码 11111</code><br>
+  <kbd>一段键盘代码 11111</kbd><br>
+  <br>
+
+  <p style="color: red"><samp>>计算机输出标签测试1</samp></p>
+  <samp>>计算机输出标签测试2</samp>
+  <p><var>计算机输出标签测试</var></p>
+  <p><pre>计算机输出标签测试</pre></p>
+
+  <p>The <abbr title="United Nations Educationnel, Scientific and Cultural Organization">UNSCO</abbr> was founded in 1972.</p >
+
+  <p><bdo dir="rtl">AAA</bdo></p>
+  <br>
+  <blockquote cite="https://www.runoob.com/html/html-formatting.html">HTML文本格式化</blockquote>
+</div>
+</body>
+</html>
