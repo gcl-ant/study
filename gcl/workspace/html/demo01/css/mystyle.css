@@ -1,3 +1,29 @@
 .page111{
     color: red !important;
 }
+
+ /*ID选择器  单个的*/
+ #aaa{
+    color: aqua;
+  }
+
+  /*类选择器  多数的*/
+  .a111{
+    color: bisque !important;
+  }
+
+  /*标签选择权  多数的*/
+  p{
+    color: chartreuse;
+  }
+
+  /*属性选择器  多数的*/
+  p[name="a111zz"]{
+    color: chartreuse;
+  }
+
+  /*伪选择器*/
+  p[name="a111zz"]:hover{
+    color: red;
+    background-color: #dbe3ff;
+  }
