@@ -10,3 +10,8 @@ spring:
      url: jdbc:mysql://54.252.226.118:3306/online_shop
 #    url: jdbc:mysql://127.0.0.1:3306/online_shop
 
+mybatis:
+  mapper-locations: classpath:*.xml
+
+
+
