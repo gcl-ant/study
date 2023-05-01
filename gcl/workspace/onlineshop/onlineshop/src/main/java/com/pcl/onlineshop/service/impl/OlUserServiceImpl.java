@@ -23,13 +23,15 @@ public class OlUserServiceImpl implements OlUserService {
     @Override
     public UserDto login(String email, String password) {
 
-        int count = userMapper.queryMailAndPassword(email, password);
+        Integer userId = userMapper.queryMailAndPassword(email, password);
 
-        if (count == 0){
+        if (userId == 0){
             //ユーザが見つかれません
             logger.error(ErrorEnum.Ol_USER_ERROR_001.getContent());
             throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_001);
         }
+
+        userMapper.queryUserById(userId);
         return null;
     }
 }
