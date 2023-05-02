@@ -13,4 +13,8 @@ public class OlRuntimeException extends RuntimeException{
         this.code = errorEnum.getCode();
         this.content = errorEnum.getContent();
     }
+
+    public String getCode() {
+        return code;
+    }
 }
