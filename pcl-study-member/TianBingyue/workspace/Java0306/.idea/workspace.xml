@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13cbb04c-bc1b-414d-82c3-0d73ead60757" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/day25/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/ppt09/Jwrite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/ppt09/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/ppt09/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/ppt09/excyteMark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/ppt09/shurushuchu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../homework/homeworkApirl/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../homework/homeworkApirl/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/homeworkApirl/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/homeworkApirl/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/homeworkApirl/Student.java" afterDir="false" />
-    </list>
+    <list default="true" id="13cbb04c-bc1b-414d-82c3-0d73ead60757" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,14 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Student">
+}</component>
+  <component name="RunManager" selected="Application.Calculator">
     <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homeworkApirl.Calculator" />
       <module name="Java0306" />

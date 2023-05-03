@@ -5,8 +5,8 @@ public class Hero {
     int level;
     int offensivePower;
 
-    public int attack(Monster monster){
-        return monster.life-this.offensivePower;
+    public int attack(Monster monster) {
+        return monster.life - this.offensivePower;
     }
 
 }

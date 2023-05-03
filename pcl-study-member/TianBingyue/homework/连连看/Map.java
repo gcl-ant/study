@@ -1,6 +1,6 @@
 package Day18;
 
- class Map {
+class Map {
 
     private int witdth;
 
@@ -18,7 +18,7 @@ package Day18;
         return nodes;
     }
 
-    public Node getNode(int x,int y){
+    public Node getNode(int x, int y) {
         return nodes[x][y];
     }
 
@@ -26,11 +26,11 @@ package Day18;
         this.nodes = nodes;
     }
 
-    public void setNode(int x, int y ,Node node){
+    public void setNode(int x, int y, Node node) {
         this.nodes[x][y] = node;
     }
 
-    public boolean canConnect(Node node1 ,Node node2){
+    public boolean canConnect(Node node1, Node node2) {
         return node1.canConnect(node2);
     }
 }
