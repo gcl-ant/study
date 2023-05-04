@@ -16,16 +16,12 @@ public class OlUserController {
     @Autowired
     OlUserService userService;
 
-
     @PostMapping(value = "/doLogin")
     public ResponseBase doLogin(@RequestBody UserRequestIn userRequestIn) {
-
         UserRequestOut requestOut = new UserRequestOut();
-
         UserDto userDto = userService.login(userRequestIn.getUserName(), userRequestIn.getPassword());
         requestOut.setUserName(userDto.getName());
         requestOut.setRequestResult("0");
-
         return requestOut;
     }
 }
