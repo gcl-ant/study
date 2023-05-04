@@ -21,7 +21,7 @@ public class OlUserServiceImpl implements OlUserService {
     @Autowired
     OlUserMapper userMapper;
 
-    private static final Logger logger = LogManager.getLogger(OnlineshopApplication.class);
+    private static final Logger logger = LogManager.getLogger(OlUserServiceImpl.class);
 
     @Override
     public UserDto login(String email, String password) {

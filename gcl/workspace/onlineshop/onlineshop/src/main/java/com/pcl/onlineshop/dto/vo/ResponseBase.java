@@ -4,10 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class UserRequestIn {
+public class ResponseBase {
+    @JsonProperty("request_result")
+    private String requestResult;
 
-    @JsonProperty("user_name")
-    private String userName;
-
-    private String password;
 }
