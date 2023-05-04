@@ -1,6 +1,6 @@
 package Day18;
 
-public class ThreeFoldNode extends Node{
+public class ThreeFoldNode extends Node {
     public ThreeFoldNode(int x, int y) {
         super(x, y);
     }
@@ -8,7 +8,7 @@ public class ThreeFoldNode extends Node{
     @Override
     public boolean canConnect(Node other) {
 
-        if (!(other instanceof ThreeFoldNode)){
+        if (!(other instanceof ThreeFoldNode)) {
             return false;
         }
 

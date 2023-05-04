@@ -6,6 +6,7 @@ public class Monster {
     int life;
     int level;
     int experience;
+
     Monster(String name, int level) {
         this.level = level;
         this.name = name;

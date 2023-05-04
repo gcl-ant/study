@@ -34,7 +34,10 @@ public class Mplayer {
 
         playthread = new PlayThread(); //将原本为空对象的playThread实例化一个进程对象
         playthread.start(); //并开启进程(在暂停时，就直接取消掉进程)
-    } catch (Exception e) {
+    } catch(
+    Exception e)
+
+    {
         e.printStackTrace();
     }
 

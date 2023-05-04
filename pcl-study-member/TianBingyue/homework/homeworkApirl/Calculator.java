@@ -32,10 +32,10 @@ public class Calculator {
 
 
     public static void main(String[] args) {
-        Calculator calculator = new Calculator(77,88);
-        calculator.add(12,34);
-        calculator.sub(10,100);
-        calculator.mul(22,2);
-        calculator.div(33,3);
+        Calculator calculator = new Calculator(77, 88);
+        calculator.add(12, 34);
+        calculator.sub(10, 100);
+        calculator.mul(22, 2);
+        calculator.div(33, 3);
     }
 }

@@ -23,7 +23,7 @@ public class Circle extends Shape {
     }
 
     //子类矩形类的继承
-public class Rectangle extends Shape {
+    public class Rectangle extends Shape {
         private final int weight;
         private final int height;
 
