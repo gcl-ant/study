@@ -3,6 +3,7 @@ package com.pcl.onlineshop.config.olenum;
 
 public enum ErrorEnum {
     Ol_USER_ERROR_001("001","ログイン失敗しました")
+    ,Ol_USER_ERROR_1601("16001","request不正")
     ;
 
 

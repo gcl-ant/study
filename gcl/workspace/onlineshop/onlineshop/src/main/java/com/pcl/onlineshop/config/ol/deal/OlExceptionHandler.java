@@ -2,7 +2,6 @@ package com.pcl.onlineshop.config.ol.deal;
 
 import com.pcl.onlineshop.config.exception.OlRuntimeException;
 import com.pcl.onlineshop.dto.vo.ResponseBase;
-import com.pcl.onlineshop.service.impl.OlUserServiceImpl;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
