@@ -30,7 +30,6 @@ public class OlInfoController {
 
         InfoOut out = new InfoOut();
 
-
         if (StringUtils.hasLength(userId)) {
             List<InfoDto> infoDtos = olInfoService.queryInfoByUserID(Integer.valueOf(userId));
 
@@ -41,7 +40,6 @@ public class OlInfoController {
             }
 
             return out;
-
         }
         throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_1601);
     }
