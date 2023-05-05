@@ -31,15 +31,10 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 
 import lombok.extern.log4j.Log4j2;
 
-/**
- * オブジェクトの共通ユーティリティ
- *
- * @author Hash DasH Holdings
- */
+
 @Log4j2
 public class OlBeanUtils {
     private final static ObjectMapper objectMapper = new ObjectMapper();
-
 
     public static final <T, S> T createCopy(S oSrc, Class<T> type) {
         try {
@@ -56,37 +51,18 @@ public class OlBeanUtils {
         return oSrc.stream().map(o -> createCopy(o, type)).collect(Collectors.toList());
     }
 
-    /**
-     * MapをEntityに変える
-     *
-     * @param <T>
-     * @param map 転換元Map
-     * @param ouputClass 転換先Class
-     * @return T
-     */
+
     public static final <T> T mapConvertToDto(Map<String, Object> map, Class<T> ouputClass) {
         T obj = objectMapper.convertValue(map, ouputClass);
         return obj;
     }
-    /**
-     * MapをEntityに変える
-     *
-     * @param <T>
-     * @param map 転換元Map
-     * @param ouputClass 転換先Class
-     * @return T
-     */
+
     public static final <T> T mapConvertToStreamDto(Map<Object, Object> map, Class<T> ouputClass) {
         T obj = objectMapper.convertValue(map, ouputClass);
         return obj;
     }
 
-    /**
-     * EntityをMapに変える
-     *
-     * @param oSrc
-     * @return T
-     */
+
     @SuppressWarnings("unchecked")
     public static final <T, S> Map<String, Object> dtoConvertToMap(S oSrc) {
         Map<String, Object> mapResult = objectMapper.convertValue(oSrc, Map.class);
