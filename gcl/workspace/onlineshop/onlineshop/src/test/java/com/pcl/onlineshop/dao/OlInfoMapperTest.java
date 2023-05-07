@@ -62,4 +62,23 @@ class OlInfoMapperTest {
 
         assert infoEntities.size() == 1;
     }
+
+    /**
+     * 删除InFo 不存在的ID
+     */
+    @Test
+    void delInfoById001() {
+       Integer count =  olInfoMapper.delInfoById(5);
+        assert count == 0;
+    }
+
+
+    /**
+     * 删除InFo 存在的ID
+     */
+    @Test
+    void delInfoById002() {
+        Integer count =  olInfoMapper.delInfoById(1);
+        assert count == 1;
+    }
 }

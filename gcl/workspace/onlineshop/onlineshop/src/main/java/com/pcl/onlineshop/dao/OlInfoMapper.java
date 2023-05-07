@@ -1,6 +1,7 @@
 package com.pcl.onlineshop.dao;
 
 import com.pcl.onlineshop.dto.entity.InfoEntity;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -24,4 +25,8 @@ public interface OlInfoMapper {
             " OR " +
             "    info2User.user_id = 9999 ")
     List<InfoEntity> selectPrInfo(@Param("userId")int userId);
+
+
+    @Delete(" DELETE FROM informations WHERE id = #{infoId}")
+    Integer delInfoById(@Param("infoId")int infoId);
 }
