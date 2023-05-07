@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping("/mail")
@@ -42,6 +43,18 @@ public class OlInfoController {
             return out;
         }
         throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_1601);
+    }
+
+
+    @RequestMapping(value = "/del/{id}", method = POST)
+    public InfoOut delInfoById(@PathVariable(name = "id") String infoId) {
+        InfoOut out = new InfoOut();
+        if (StringUtils.hasLength(infoId)) {
+            olInfoService.delInfoById(Integer.valueOf(infoId));
+            out.setRequestResult("0");
+            return out;
+        }
+        throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_1701);
     }
 
 }
