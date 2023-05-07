@@ -7,4 +7,7 @@ import java.util.List;
 public interface OlInfoService {
 
     List<InfoDto> queryInfoByUserID(Integer userId);
+
+
+    Integer delInfoById(Integer infoId);
 }
