@@ -19,6 +19,8 @@ import javax.naming.ldap.PagedResultsControl;
 
 import java.time.LocalDateTime;
 
+import static com.pcl.onlineshop.config.olenum.ErrorEnum.Ol_USER_ERROR_0501;
+import static com.pcl.onlineshop.config.olenum.ErrorEnum.Ol_USER_ERROR_0502;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -72,6 +74,93 @@ class OlUserServiceImplTest {
 
     }
 
+    @Test
+    void withDrawUserTest001() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(2);
+        try {
+            userService.withDrawUser(null, "vv");
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0501.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest002() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(2);
+        try {
+            userService.withDrawUser("aa", null);
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0501.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest003() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(2);
+        try {
+            userService.withDrawUser(null, null);
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0501.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest004() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(2);
+        try {
+            userService.withDrawUser("", "");
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0501.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest005() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(null);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(1);
+
+        try {
+            String result = userService.withDrawUser("a", "b");
+        } catch (OlRuntimeException oe){
+            assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest006() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(null);
+
+        try {
+            String result = userService.withDrawUser("a", "b");
+        } catch (OlRuntimeException oe){
+            assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest007() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(0);
+
+        try {
+            String result = userService.withDrawUser("a", "b");
+        } catch (OlRuntimeException oe){
+            assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
+        }
+    }
+
+    @Test
+    void withDrawUserTest008() {
+        Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
+        Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(1);
+        String result = userService.withDrawUser("aa", "vv");
+        assert result.equals(OlUserServiceImpl.SUCCESS_STR);
+    }
 //
 //    @Test
 //    void loginTest002() {
