@@ -24,4 +24,12 @@ public class OlUserController {
         requestOut.setRequestResult("0");
         return requestOut;
     }
+
+    @PostMapping(value = "/register/noUser")
+    public ResponseBase withDrawUser(@RequestBody UserRequestIn userRequestIn) {
+        ResponseBase requestOut = new ResponseBase();
+        String successFlag = userService.withDrawUser(userRequestIn.getUserName(), userRequestIn.getPassword());
+        requestOut.setRequestResult(successFlag);
+        return requestOut;
+    }
 }
