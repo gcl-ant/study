@@ -3,6 +3,7 @@ package com.pcl.onlineshop.dao;
 import com.pcl.onlineshop.dto.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -13,4 +14,8 @@ public interface OlUserMapper {
 
     @Select("SELECT * FROM user where id = #{id}")
     UserEntity queryUserById(@Param("id")Integer id);
+
+    @Update("UPDATE user SET is_delete = 1 WHERE id = #{userId}")
+    Integer withdrawalUser(@Param("userId") Integer userId);
+
 }

@@ -43,4 +43,24 @@ public class OlUserMapperTest {
         UserEntity entity = userMapper.queryUserById(3);
         assert  entity == null;
     }
+
+    /**
+     * not exsit user
+     */
+    @Test
+    public void testWithDrawlUser001(){
+        Integer count = userMapper.withdrawalUser(999);
+        assert  count == 0;
+    }
+
+    /**
+     *  exsit user
+     */
+    @Test
+    public void testWithDrawlUser002(){
+        Integer count = userMapper.withdrawalUser(1);
+        assert  count == 1;
+    }
+
+
 }
