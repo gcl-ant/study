@@ -23,6 +23,16 @@ public class OlUserController {
     @Autowired
     OlUserService userService;
 
+    @PostMapping(value = "/register/user")
+    public ResponseBase register(@RequestBody UserRequestIn userRequestIn) {
+        ResponseBase requestOut = new ResponseBase();
+        String successFlag = userService.register(userRequestIn.getUserName(), userRequestIn.getPassword(),
+                userRequestIn.getSex(), userRequestIn.getMail(), userRequestIn.getUserRole(),
+                userRequestIn.getSendMailFlg());
+        requestOut.setRequestResult(successFlag);
+        return requestOut;
+    }
+
     @PostMapping(value = LOGIN_URL)
     public ResponseBase doLogin(@RequestBody UserRequestIn userRequestIn, HttpSession httpSession) {
         UserRequestOut requestOut = new UserRequestOut();

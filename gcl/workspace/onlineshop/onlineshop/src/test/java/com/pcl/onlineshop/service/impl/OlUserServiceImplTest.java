@@ -19,8 +19,8 @@ import javax.naming.ldap.PagedResultsControl;
 
 import java.time.LocalDateTime;
 
-import static com.pcl.onlineshop.config.olenum.ErrorEnum.Ol_USER_ERROR_0501;
-import static com.pcl.onlineshop.config.olenum.ErrorEnum.Ol_USER_ERROR_0502;
+import static com.pcl.onlineshop.config.olenum.ErrorEnum.*;
+import static com.pcl.onlineshop.service.impl.OlUserServiceImpl.SUCCESS_STR;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -159,7 +159,7 @@ class OlUserServiceImplTest {
         Mockito.when(olUserMapper.withdrawalUser(Mockito.any())).thenReturn(1);
         Mockito.when(olUserMapper.queryMailAndPassword(Mockito.any(), Mockito.any())).thenReturn(1);
         String result = userService.withDrawUser("aa", "vv");
-        assert result.equals(OlUserServiceImpl.SUCCESS_STR);
+        assert result.equals(SUCCESS_STR);
     }
 //
 //    @Test
@@ -183,6 +183,58 @@ class OlUserServiceImplTest {
         userEntity.setCreatedDate(LocalDateTime.now());
         userEntity.setUpdateDate(LocalDateTime.now());
         userEntity.setIsDelete("0");
+        userEntity.setName("xiaowangba");
+        userEntity.setPassword("123456");
+        userEntity.setSex("1");
+        userEntity.setSendMailFlg("3");
+
+        return userEntity;
+    }
+
+    @Test
+    void registerTest001() {
+
+        //email not exist,register success
+        Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(null);
+        Mockito.when(olUserMapper.OlUserRegister(Mockito.any(),Mockito.any(),Mockito.any(),Mockito.any(),Mockito.any(),
+                Mockito.any())).thenReturn(1);
+
+
+        String result = userService.register("zhang","zhang","1","zhang@mail.com","1","1");
+        assert result == SUCCESS_STR;
+    }
+
+    @Test
+    void registerTest002() {
+
+
+        //email exist,is_delete is 1,register success
+        Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(initUserEntity2());
+//        Mockito.when(olUserMapper.这里添加田冰玥同学的userMapper.用户更新功能代码;
+        String result = userService.register("zhang","zhang","1","test@test.com","1","1");
+        assert result == SUCCESS_STR;
+    }
+
+    @Test
+    void registerTest003() {
+        //email existed,is_delete is 0,register failed,throw exception
+        Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(initUserEntity());
+        try {
+            userService.register("zhang","zhang","1",  "test@test.com",  "1", "1");
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0301.getCode());
+        }
+    }
+    private UserEntity initUserEntity2() {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setId(1);
+        userEntity.setCreatedUser("aaa");
+        userEntity.setUpdateUser("bbb");
+        userEntity.setUserRole("2");
+        userEntity.setMail("test@test.com");
+        userEntity.setCreatedDate(LocalDateTime.now());
+        userEntity.setUpdateDate(LocalDateTime.now());
+        userEntity.setIsDelete("1");
         userEntity.setName("xiaowangba");
         userEntity.setPassword("123456");
         userEntity.setSex("1");

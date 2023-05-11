@@ -11,4 +11,16 @@ public class UserRequestIn {
 
     @JsonProperty("password")
     private String password;
+
+    @JsonProperty("sex")
+    private String sex;
+
+    @JsonProperty("mail")
+    private String mail;
+
+    @JsonProperty("user_role")
+    private String userRole;
+
+    @JsonProperty("send_mail_flg")
+    private String sendMailFlg;
 }

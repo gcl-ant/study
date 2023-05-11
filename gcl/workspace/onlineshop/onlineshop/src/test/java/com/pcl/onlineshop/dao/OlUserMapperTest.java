@@ -62,5 +62,34 @@ public class OlUserMapperTest {
         assert  count == 1;
     }
 
+    @Test
+    void testUserRegister001() {
+        Integer count = userMapper.OlUserRegister("Tian3","tianjiyun","1",
+                "tian3@gmail.com",  "1", "1");
+        assert count == 1;
+    }
+
+
+    @Test
+    void testQueryUserIdByMail001() {
+        UserEntity entity = userMapper.queryUserIdAndIfDeletedByMail("xiaowang@gmail.com");
+        assert (entity.getId() == 1 && entity.getIsDelete().equals("0") );
+    }
+    @Test
+    void testQueryUserIdByMail002() {
+        UserEntity entity = userMapper.queryUserIdAndIfDeletedByMail("lisi@gmail.com");
+        assert (entity.getId() == 2 && entity.getIsDelete() .equals("1"));
+    }
+    @Test
+    void testQueryUserIdByMail003() {
+        UserEntity entity = userMapper.queryUserIdAndIfDeletedByMail("zhaoliu@gmail.com");
+        assert entity == null;
+    }
+
+    @Test
+    void olUserRegisterAgain() {
+        Integer integer = userMapper.OlUserRegisterAgain("xiaowang@gmail.com");
+        assert integer == 1;
+    }
 
 }
