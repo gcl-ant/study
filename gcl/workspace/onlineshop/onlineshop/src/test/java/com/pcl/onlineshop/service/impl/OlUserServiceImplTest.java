@@ -125,7 +125,7 @@ class OlUserServiceImplTest {
 
         try {
             String result = userService.withDrawUser("a", "b");
-        } catch (OlRuntimeException oe){
+        } catch (OlRuntimeException oe) {
             assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
         }
     }
@@ -137,7 +137,7 @@ class OlUserServiceImplTest {
 
         try {
             String result = userService.withDrawUser("a", "b");
-        } catch (OlRuntimeException oe){
+        } catch (OlRuntimeException oe) {
             assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
         }
     }
@@ -149,7 +149,7 @@ class OlUserServiceImplTest {
 
         try {
             String result = userService.withDrawUser("a", "b");
-        } catch (OlRuntimeException oe){
+        } catch (OlRuntimeException oe) {
             assert oe.getCode().equals(Ol_USER_ERROR_0502.getCode());
         }
     }
@@ -196,23 +196,22 @@ class OlUserServiceImplTest {
 
         //email not exist,register success
         Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(null);
-        Mockito.when(olUserMapper.OlUserRegister(Mockito.any(),Mockito.any(),Mockito.any(),Mockito.any(),Mockito.any(),
+        Mockito.when(olUserMapper.OlUserRegister(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(),
                 Mockito.any())).thenReturn(1);
 
 
-        String result = userService.register("zhang","zhang","1","zhang@mail.com","1","1");
+        String result = userService.register("zhang", "zhang", "1", "zhang@mail.com", "1", "1");
         assert result == SUCCESS_STR;
     }
 
     @Test
     void registerTest002() {
-
-
         //email exist,is_delete is 1,register success
         Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(initUserEntity2());
+        Mockito.when(olUserMapper.updateUser(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(1);
 //        Mockito.when(olUserMapper.这里添加田冰玥同学的userMapper.用户更新功能代码;
-        String result = userService.register("zhang","zhang","1","test@test.com","1","1");
-        assert result == SUCCESS_STR;
+        String result = userService.register("zhang", "zhang", "1", "xiaoli@gmail.com", "1", "1");
+        assert result.equals(SUCCESS_STR);
     }
 
     @Test
@@ -220,11 +219,54 @@ class OlUserServiceImplTest {
         //email existed,is_delete is 0,register failed,throw exception
         Mockito.when(olUserMapper.queryUserIdAndIfDeletedByMail(Mockito.any())).thenReturn(initUserEntity());
         try {
-            userService.register("zhang","zhang","1",  "test@test.com",  "1", "1");
+            userService.register("zhang", "zhang", "1", "test@test.com", "1", "1");
         } catch (OlRuntimeException oe) {
             assert oe.getCode().equals(Ol_USER_ERROR_0301.getCode());
         }
     }
+
+    @Test
+    void updateTest001() {
+        //email existed,is_delete is 0,register failed,throw exception
+        Mockito.when(olUserMapper.updateUser(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(null);
+        try {
+            userService.updateUser("zhang", "zhang", 1);
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0402.getCode());
+        }
+    }
+
+    @Test
+    void updateTest002() {
+        //email existed,is_delete is 0,register failed,throw exception
+        Mockito.when(olUserMapper.updateUser(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(1);
+
+        String result = userService.updateUser("zhang", "zhang", 2);
+
+        result.equals(SUCCESS_STR);
+    }
+
+    @Test
+    void updateTest003() {
+        //email existed,is_delete is 0,register failed,throw exception
+        Mockito.when(olUserMapper.updateUser(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(1);
+        try {
+            userService.updateUser("zhang", "zhang", null);
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0401.getCode());
+        }
+    }
+
+    @Test
+    void updateTest004() {
+        //email existed,is_delete is 0,register failed,throw exception
+        Mockito.when(olUserMapper.updateUser(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(1);
+
+        String result = userService.updateUser("zhang", "zhang", 2);
+
+        result.equals(SUCCESS_STR);
+    }
+
     private UserEntity initUserEntity2() {
         UserEntity userEntity = new UserEntity();
         userEntity.setId(1);

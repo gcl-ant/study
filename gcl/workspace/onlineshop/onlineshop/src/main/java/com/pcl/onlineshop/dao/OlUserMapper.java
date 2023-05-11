@@ -64,4 +64,26 @@ public interface OlUserMapper {
     @Update("UPDATE user SET is_delete = 0 WHERE mail = #{mail}")
     Integer OlUserRegisterAgain(@Param("mail") String userMail);
 
+    //用户更新
+    //更新信息
+    @Update(" <script> " +
+            " UPDATE " +
+            "     user " +
+            " SET " +
+            "     id = #{id}" +
+            "     <if test=\"name != null \"> " +
+            "     ,name = #{name} " +
+            "    </if> " +
+            "    <if test=\"sex != null \">" +
+            "   , sex = #{sex} " +
+            "    </if>" +
+            " WHERE " +
+            "   id = #{id} " +
+            " </script> ")
+    Integer updateUser(
+            @Param("name") String name,
+            @Param("sex") String sex,
+            @Param("id") Integer id
+    );
+
 }

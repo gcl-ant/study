@@ -9,8 +9,11 @@ public interface OlUserService {
 
     String withDrawUser(String email, String password);
 
+
     String register(String name, String password,
                     String sex, String mail,
                     String userRole,
                     String sendMailFlg);
+
+    String updateUser(String name, String sex, Integer userId);
 }

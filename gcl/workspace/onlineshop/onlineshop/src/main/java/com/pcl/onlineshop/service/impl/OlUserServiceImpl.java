@@ -30,6 +30,23 @@ public class OlUserServiceImpl implements OlUserService {
 
     private static final Logger logger = LogManager.getLogger(OlUserServiceImpl.class);
 
+    @Override
+    public String updateUser(String name, String sex, Integer userId) {
+        //判断用户ID是否存在，不存在则报错
+        if (ObjectUtils.isEmpty(userId)) {
+            logger.error(ErrorEnum.Ol_USER_ERROR_0401.getContent());
+            throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_0401);
+        }
+
+        Integer count = userMapper.updateUser(name, sex, userId);
+
+        //判断用户更新是否成功，不成功则报错
+        if (ObjectUtils.isEmpty(count) || count != 1) {
+            logger.error(ErrorEnum.Ol_USER_ERROR_0402.getContent());
+            throw new OlRuntimeException(ErrorEnum.Ol_USER_ERROR_0402);
+        }
+        return SUCCESS_STR;
+    }
 
     @Override
     public String register(String name, String password, String sex, String mail,
@@ -42,7 +59,7 @@ public class OlUserServiceImpl implements OlUserService {
             return SUCCESS_STR;
         } else if (userEntity.getIsDelete().equals("1")) {
             userMapper.OlUserRegisterAgain(mail);
-            //这里添加田冰玥同学的userMapper.用户更新功能代码
+            this.updateUser(name,sex,userEntity.getId());
             return SUCCESS_STR;
         } else {
             logger.error(ErrorEnum.Ol_USER_ERROR_0301.getContent());

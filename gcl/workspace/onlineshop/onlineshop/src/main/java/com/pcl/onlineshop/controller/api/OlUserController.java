@@ -41,7 +41,7 @@ public class OlUserController {
         requestOut.setRequestResult("0");
 
         //将用户的登录Id保存到session中
-        httpSession.setAttribute(LOGIN_USER_ID ,userDto.getId());
+        httpSession.setAttribute(LOGIN_USER_ID, userDto.getId());
         return requestOut;
     }
 
@@ -58,9 +58,24 @@ public class OlUserController {
     public ResponseBase logOut(HttpSession httpSession) {
         ResponseBase requestOut = new ResponseBase();
         //将用户ID从session中去除
-        httpSession.setAttribute(LOGIN_USER_ID ,null);
+        httpSession.setAttribute(LOGIN_USER_ID, null);
 
         requestOut.setRequestResult(SUCCESS);
+        return requestOut;
+    }
+
+    @PostMapping(value = "/updateUser")
+    @UserIdCheckMethod
+    public ResponseBase updateUser(@RequestBody UserRequestIn userRequestIn, HttpSession httpSession) {
+        ResponseBase requestOut = new ResponseBase();
+
+        Integer userId = (Integer) httpSession.getAttribute(LOGIN_USER_ID);
+
+        String updateUser = userService.updateUser(
+                userRequestIn.getUserName()
+                , userRequestIn.getSex()
+                , userId);
+        requestOut.setRequestResult(updateUser);
         return requestOut;
     }
 }
