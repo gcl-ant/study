@@ -31,4 +31,14 @@ public interface OlInfoMapper {
     @Delete(" DELETE FROM informations WHERE id = #{infoId}")
     Integer delInfoById(@Param("infoId")int infoId);
 
+    @Select(" SELECT " +
+            "    info.id " +
+            "    ,info.information_content " +
+            "    ,info.send_flg " +
+            "    ,info.send_success_time " +
+            " FROM " +
+            "    informations info " +
+            " WHERE " +
+            "    info.id = #{infoId} ")
+    InfoEntity selectInfoById(@Param("infoId")int infoId);
 }

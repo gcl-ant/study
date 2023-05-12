@@ -5,6 +5,7 @@ import com.pcl.onlineshop.config.tool.OlBeanUtils;
 import com.pcl.onlineshop.dao.OlInfo2UserMapper;
 import com.pcl.onlineshop.dao.OlInfoMapper;
 import com.pcl.onlineshop.dto.InfoDto;
+import com.pcl.onlineshop.dto.entity.InfoEntity;
 import com.pcl.onlineshop.service.OlInfoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,22 @@ public class OlInfoServiceImpl implements OlInfoService {
         olInfo2UserMapper.delInfoById(infoId);
 
         return 1;
+    }
+
+    @Override
+    public InfoDto queryInfoById(Integer infoId) {
+
+        if (ObjectUtils.isEmpty(infoId)){
+            throw new OlRuntimeException(Ol_USER_ERROR_1701);
+        }
+
+        InfoEntity infoEntity = olInfoMapper.selectInfoById(infoId);
+
+        if (ObjectUtils.isEmpty(infoEntity)){
+            throw new OlRuntimeException(Ol_USER_ERROR_1702);
+        }
+
+        return OlBeanUtils.createCopy(infoEntity,InfoDto.class);
     }
 
 
