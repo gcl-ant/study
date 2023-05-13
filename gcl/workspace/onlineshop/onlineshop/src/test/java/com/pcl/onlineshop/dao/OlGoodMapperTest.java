@@ -23,7 +23,7 @@ class OlGoodMapperTest {
 
     @Test
     void selectGoodsDetails() {
-        GoodEntity good =  olGoodMapper.selectGoodsDetails(1);
+        GoodEntity good = olGoodMapper.selectGoodsDetails(1);
 
         assert !ObjectUtils.isEmpty(good);
 
@@ -32,8 +32,41 @@ class OlGoodMapperTest {
     @Test
     void selectGoodsImages() {
 
-        List<GoodImageEntity> imageEntities =  olGoodMapper.selectGoodsImages(1);
+        List<GoodImageEntity> imageEntities = olGoodMapper.selectGoodsImages(1);
 
         assert !ObjectUtils.isEmpty(imageEntities);
+    }
+
+    @Test
+    void testGetAllGoods001() {
+
+        List<GoodEntity> goodEntities = olGoodMapper.getAllGoods();
+
+        assert !goodEntities.isEmpty();
+    }
+
+
+    @Test
+    void testGetGoodById001() {
+
+        GoodEntity good = olGoodMapper.searchGoodsById(1);
+
+        assert good != null;
+    }
+
+    @Test
+    void testGetGoodById002() {
+
+        GoodEntity good = olGoodMapper.searchGoodsById(999);
+
+        assert good == null;
+
+    }
+
+
+    @Test
+    void changeGoodCondition001() {
+        Integer count = olGoodMapper.changeGoodCondition(1,"賣家已出貨");
+        assert count == 1;
     }
 }
