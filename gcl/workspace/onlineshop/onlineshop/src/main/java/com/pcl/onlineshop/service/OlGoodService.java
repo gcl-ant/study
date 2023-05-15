@@ -14,4 +14,6 @@ public interface OlGoodService {
 
 
     Boolean changeGoodCondition(Integer goodId, String status);
+
+    Integer AddComment(String content, Integer tranId, String commentRate);
 }

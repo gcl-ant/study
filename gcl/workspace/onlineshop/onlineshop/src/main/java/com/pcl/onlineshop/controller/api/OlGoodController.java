@@ -107,4 +107,15 @@ public class OlGoodController {
         return out;
     }
 
+    @UserIdCheckMethod
+    @PostMapping(value = "/express")
+    public ResponseBase addCommentByTranId(@RequestBody GoodComment goodComment){
+
+        ResponseBase requestOut = new ResponseBase();
+        Integer integer = olGoodService.AddComment(goodComment.getContent(), goodComment.getTranId(),
+                goodComment.getCommentRate());
+        requestOut.setRequestResult(Integer.toString(integer));
+        return requestOut;
+    }
+
 }
