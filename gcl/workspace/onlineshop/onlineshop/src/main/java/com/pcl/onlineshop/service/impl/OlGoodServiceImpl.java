@@ -53,7 +53,7 @@ public class OlGoodServiceImpl implements OlGoodService {
             content = COMMENT_DEFAULT_MESSAGE;
         }
 
-        if (ObjectUtils.isEmpty(tranId) || ObjectUtils.isEmpty(commentRate)) {
+        if (ObjectUtils.isEmpty(commentRate)) {
             logger.error(ErrorEnum.Ol_USER_ERROR_1001.getContent());
             throw new OlRuntimeException(Ol_USER_ERROR_1001);
         }
@@ -68,16 +68,10 @@ public class OlGoodServiceImpl implements OlGoodService {
             throw new OlRuntimeException(Ol_USER_ERROR_1003);
         }
 
-        Integer tranIdCount = olTranMapper.queryTranIdExist(tranId);
-
-        if (ObjectUtils.isEmpty(tranIdCount) || tranIdCount != 1) {
-            logger.error(ErrorEnum.Ol_USER_ERROR_1004.getContent());
-            throw new OlRuntimeException(Ol_USER_ERROR_1004);
-        }
-
         OlComment comment = intiCommnet(content, tranId, commentRate);
 
-        Integer result2 = olCommentMapper.addComment(comment);
+        Integer result2 = olCommentMapper.addComment2(comment);
+
         return result2;
     }
 

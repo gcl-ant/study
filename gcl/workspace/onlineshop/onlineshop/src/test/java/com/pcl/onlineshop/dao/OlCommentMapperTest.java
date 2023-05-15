@@ -39,4 +39,26 @@ class OlCommentMapperTest {
         Integer count = olCommentMapper.addComment(olComment);
         assert count == 1;
     }
+
+
+    @Test
+    void addCommentTest003() {
+        OlComment olComment = new OlComment();
+        olComment.setContent("abcあいうえお中问");
+        olComment.setTranId(5);
+        olComment.setOlCommnetDivision("1");
+        Integer count = olCommentMapper.addComment2(olComment);
+        assert count == 1;
+    }
+
+    @Test
+    void addCommentTest004() {
+        OlComment olComment = new OlComment();
+        olComment.setContent("abcあいうえお中问11");
+        olComment.setTranId(1);
+        olComment.setOlCommnetDivision("1");
+        Integer count = olCommentMapper.addComment2(olComment);
+        assert count == 1;
+    }
+
 }

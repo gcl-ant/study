@@ -31,4 +31,7 @@ public class UserEntity {
     private LocalDateTime updateDate;
 
     private String updateUser;
+
+
+
 }
