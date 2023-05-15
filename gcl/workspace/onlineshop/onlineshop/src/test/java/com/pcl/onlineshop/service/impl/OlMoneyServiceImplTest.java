@@ -31,7 +31,7 @@ class OlMoneyServiceImplTest {
     @Test
     void queryMoneyListByAccountId001() {
         List<MoneyEntity> moneyEntities = new ArrayList<>();
-        Mockito.when(olMoneyMapper.selectOpeMoneyTime(Mockito.anyInt())).thenReturn(moneyEntities);
+        Mockito.when(olMoneyMapper.selectOpeMoneyHistory(Mockito.anyInt())).thenReturn(moneyEntities);
         try {
             olMoneyService.queryMoneyListByAccountId(20230001);
         } catch (OlRuntimeException ex) {
