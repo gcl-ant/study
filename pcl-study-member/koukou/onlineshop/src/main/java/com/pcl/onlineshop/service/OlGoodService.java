@@ -1,7 +1,13 @@
 package com.pcl.onlineshop.service;
 
-import org.springframework.stereotype.Service;
+import com.pcl.onlineshop.dto.GoodDto;
+import java.util.List;
 
-@Service
 public interface OlGoodService {
+
+    GoodDto queryGoodDetailById(Integer goodId);
+
+    List<GoodDto> getAllGoods();
+
+    Boolean changeGoodCondition(Integer goodId, String status);
 }
