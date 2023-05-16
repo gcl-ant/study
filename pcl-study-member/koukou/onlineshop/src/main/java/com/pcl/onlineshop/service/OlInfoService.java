@@ -1,7 +1,13 @@
 package com.pcl.onlineshop.service;
 
-import org.springframework.stereotype.Service;
+import com.pcl.onlineshop.dto.InfoDto;
+import java.util.List;
 
-@Service
 public interface OlInfoService {
+
+    List<InfoDto> queryInfoByUserID(Integer userId);
+
+    Integer delInfoById(Integer infoId);
+
+    InfoDto queryInfoById(Integer valueOf);
 }
