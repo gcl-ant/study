@@ -13,9 +13,16 @@ public enum ErrorEnum {
     ,Ol_USER_ERROR_0702("07002","商品情報が存在しない")
     ,Ol_USER_ERROR_0901("09001","商品状態更新失敗しました")
     ,Ol_USER_WARNING_0701("W07001","商品の写真情報が存在しない")
+    ,Ol_USER_ERROR_1001("10001","入力パラメータ不正")
+    ,Ol_USER_ERROR_1002("10002","2文字以上の入力をしてください")
+    ,Ol_USER_ERROR_1003("10003","入力内容は”1”か、”2”をしてください")
+    ,Ol_USER_ERROR_1004("10004","取引実績が存在しない")
     ,Ol_USER_ERROR_1601("16001","request不正")
+    ,Ol_USER_ERROR_1602("16002","入出金したことがない")
     ,Ol_USER_ERROR_1701("17001","infoIDが存在しない")
-    ,Ol_USER_ERROR_1702("17002","おしらせが存在しない");
+    ,Ol_USER_ERROR_1702("17002","おしらせが存在しない")
+    ,Ol_USER_ERROR_1703("17003","accountIDが存在しない");
+    ;
 
 
 
