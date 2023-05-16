@@ -97,4 +97,13 @@ public interface OlGoodMapper {
     )
     List<GoodImageEntity> selectGoodsImages(@Param("goodId") Integer goodId);
 
+    //更新商品数量
+    @Update(" UPDATE " +
+            "   goods" +
+            " SET" +
+            "   goods.number = #{number} " +
+            " WHERE " +
+            "   goods.id = #{good_id} ")
+    Integer updateGoods(@Param("good_id") Integer goodId, @Param("number") Integer number);
+
 }

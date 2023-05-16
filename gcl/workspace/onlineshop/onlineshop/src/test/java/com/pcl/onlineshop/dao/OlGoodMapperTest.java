@@ -69,4 +69,18 @@ class OlGoodMapperTest {
         Integer count = olGoodMapper.changeGoodCondition(1,"賣家已出貨");
         assert count == 1;
     }
+
+    //更新商品数量
+    @Test
+    void updateGoods001() {
+        Integer count = olGoodMapper.updateGoods(1,109);
+        assert count == 1;
+    }
+
+    //更新商品数量
+    @Test
+    void updateGoods002() {
+        Integer count = olGoodMapper.updateGoods(0,109);
+        assert count == 0;
+    }
 }
