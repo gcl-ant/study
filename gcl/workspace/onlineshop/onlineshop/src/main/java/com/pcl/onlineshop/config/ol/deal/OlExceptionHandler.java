@@ -27,6 +27,7 @@ public class OlExceptionHandler {
 
     private static ResponseBase getResponseBase(Exception ex) {
         logger.error(ex.getMessage());
+        ex.printStackTrace();
         ResponseBase responseBase = new ResponseBase();
         responseBase.setRequestResult(OL_ERROR_CODE);
         return responseBase;
@@ -34,6 +35,7 @@ public class OlExceptionHandler {
 
     private static ResponseBase getResponseBase(OlRuntimeException ex) {
         logger.error(ex.getMessage());
+        ex.printStackTrace();
         ResponseBase responseBase = new ResponseBase();
         responseBase.setRequestResult(OL_ERROR_CODE);
         responseBase.setErrorCode(ex.getCode());
