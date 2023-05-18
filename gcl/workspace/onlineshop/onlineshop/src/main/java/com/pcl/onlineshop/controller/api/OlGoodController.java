@@ -118,4 +118,18 @@ public class OlGoodController {
         return requestOut;
     }
 
+    @PostMapping(value = "/returnGood")
+    @UserIdCheckMethod
+    public ResponseBase returnGood(@RequestBody GoodRequestIn goodRequestIn) {
+
+        ResponseBase out = new ResponseBase();
+        Integer count = olGoodService.returnGood(goodRequestIn.getOrderId());
+
+        if (count == 1) {
+            out.setRequestResult("0");
+            return out;
+        }
+        out.setRequestResult("99");
+        return out;
+    }
 }

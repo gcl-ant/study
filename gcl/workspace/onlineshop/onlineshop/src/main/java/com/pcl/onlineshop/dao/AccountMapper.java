@@ -12,9 +12,9 @@ public interface AccountMapper {
 
     //更新商品数量
     @Update(" UPDATE " +
-            "   account" +
+            "   account,( SELECT (account_money + #{money}) as up_money FROM  account WHERE id = #{id} ) as t2" +
             " SET" +
-            "   account_money = #{money} " +
+            "   account_money = t2.up_money" +
             "   ,update_user = #{upUser} " +
             "   ,update_date = #{nowTime} " +
             " WHERE " +

@@ -6,6 +6,9 @@ import lombok.Data;
 @Data
 public class GoodRequestIn {
 
+    @JsonProperty("order_id")
+    private Integer orderId;
+
     @JsonProperty("good_id")
     private Integer id;
 

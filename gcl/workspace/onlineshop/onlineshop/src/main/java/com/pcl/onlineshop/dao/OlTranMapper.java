@@ -20,20 +20,23 @@ public interface OlTranMapper {
     Integer queryTranIdExist(@Param("tran_id") Integer tranId);
 
     @Select(" SELECT " +
-            "   good_id "+
+            "   good_id " +
             "   ,in_count " +
             "   ,in_money" +
             "   ,account_id  " +
             " FROM " +
-            "   in_count " +
+            "   ol_tran " +
             " WHERE " +
             "   id=#{tran_id} ")
     OlTransEntity queryTranByEntityOrderId(@Param("tran_id") Integer tranId);
 
-    @Update("UPDATE ol_tran SET status = #{status},update_date=#{nowTime},update_user=#{serviceId} where  id=#{tran_id}")
+    @Update("UPDATE ol_tran " +
+            "SET status = #{status}," +
+            "update_date=#{nowTime}," +
+            "update_user=#{serviceId} where  id=#{tran_id}")
     Integer updateOrderStatus(
             @Param("tran_id") Integer orderId
-            ,@Param("status") Integer status
-            ,@Param("nowTime") LocalDateTime nowTime
-            ,@Param("serviceId") String serviceId);
+            , @Param("status") Integer status
+            , @Param("nowTime") LocalDateTime nowTime
+            , @Param("serviceId") String serviceId);
 }

@@ -6,12 +6,10 @@ import com.pcl.onlineshop.config.tool.OlBeanUtils;
 import com.pcl.onlineshop.dao.*;
 import com.pcl.onlineshop.dto.GoodDto;
 import com.pcl.onlineshop.dto.GoodImage;
-import com.pcl.onlineshop.dto.GoodsDto;
 import com.pcl.onlineshop.dto.entity.*;
 import com.pcl.onlineshop.service.OlGoodService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +18,6 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,10 +59,14 @@ public class OlGoodServiceImpl implements OlGoodService {
         }
 
         //用户退货开始  4是用户退货
-        olTranMapper.updateOrderStatus(orderId,4,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
-
         OlTransEntity olTransEntity = olTranMapper.queryTranByEntityOrderId(orderId);
         if (ObjectUtils.isEmpty(olTransEntity)) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1101);
+        }
+
+        Integer updateStatusCount = olTranMapper.updateOrderStatus(orderId,4,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
+
+        if (ObjectUtils.isEmpty(updateStatusCount) || updateStatusCount == 0) {
             throw new OlRuntimeException(Ol_USER_ERROR_1101);
         }
 
@@ -93,8 +94,11 @@ public class OlGoodServiceImpl implements OlGoodService {
         }
 
         //用户退货开始  5是退货完成
-        olTranMapper.updateOrderStatus(orderId,5,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
+        Integer accountCont2 =olTranMapper.updateOrderStatus(orderId,5,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
 
+        if (ObjectUtils.isEmpty(accountCont2) || accountCont2 == 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1102);
+        }
         return 1;
     }
 
