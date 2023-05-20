@@ -4,10 +4,6 @@ package com.pcl.onlineshop.config.olenum;
 public enum ErrorEnum {
     Ol_USER_ERROR_001("001","ログイン失敗しました")
     ,Ol_USER_ERROR_002("002","ユーザがログインしない")
-    ,Ol_USER_ERROR_2001("20001", "提现金额不能为负数")
-    ,Ol_USER_ERROR_2002("20002", "账户余额不足")
-    ,Ol_USER_ERROR_2003("20003", "出金失败")
-    ,Ol_USER_ERROR_2004("20004", "提现金额超出限制")
     ,Ol_USER_ERROR_0301("0301","ユーザーが既に存在している")
     ,Ol_USER_ERROR_0401("0401","ユーザーがまだログインされません" )
     ,Ol_USER_ERROR_0402("0402","ユーザーがデータ更新が異常になる" )
@@ -27,8 +23,16 @@ public enum ErrorEnum {
     ,Ol_USER_ERROR_1602("16002","入出金したことがない")
     ,Ol_USER_ERROR_1701("17001","infoIDが存在しない")
     ,Ol_USER_ERROR_1702("17002","おしらせが存在しない")
-    ,Ol_USER_ERROR_1703("17003","accountIDが存在しない");
-    ;
+    ,Ol_USER_ERROR_1703("17003","accountIDが存在しない")
+    ,Ol_USER_ERROR_2001("20001", "提现金额不能为负数")
+    ,Ol_USER_ERROR_2002("20002", "账户余额不足")
+    ,Ol_USER_ERROR_2003("20003", "出金失败")
+    ,Ol_USER_ERROR_2004("20004", "提现金额超出限制")
+    ,Ol_USER_ERROR_2008("20001", "入金０以下になります")
+    ,Ol_USER_ERROR_2005("20005", "入金金额超出限制")
+    ,Ol_USER_ERROR_2006("20006", "账户余额超出限制")
+    ,Ol_USER_ERROR_2007("20007", "入金失败");
+
 
 
 

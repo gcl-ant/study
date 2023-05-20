@@ -25,10 +25,7 @@ class OlCommentMapperTest {
         olComment.setOlCommnetDivision("1");
         Integer count = olCommentMapper.addComment(olComment);
         assert count == 1;
-
     }
-
-
 
     @Test
     void addCommentTest002() {

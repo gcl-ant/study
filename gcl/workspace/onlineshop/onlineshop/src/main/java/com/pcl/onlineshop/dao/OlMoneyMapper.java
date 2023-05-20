@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -51,15 +52,20 @@ public interface OlMoneyMapper {
             "   user.is_delete = 0 " +
             " WHERE " +
             "   user.id = #{userId} ")
-    MoneyEntity selectMoneyOut(@Param("userId") Integer userId);
+    MoneyEntity queryAccount(@Param("userId") Integer userId);
 
     @Update(" UPDATE " +
             " account, ( select accout_id from user where id = #{userId}) as tu " +
             " SET " +
             " account_money =  #{amount} " +
+            " ,update_date = #{nowTime} " +
+            " ,update_user = #{upUser} " +
             " WHERE " +
             " id= tu.accout_id "+
             " AND "+
             " is_delete = 0 ")
-    Integer updateAccountMoney(@Param("userId") Integer userId,@Param("amount") BigDecimal amount);
+    Integer updateAccountMoney(@Param("userId") Integer userId
+            ,@Param("amount") BigDecimal amount
+            ,@Param("nowTime") LocalDateTime nowTime
+            ,@Param("upUser") String upUser);
 }

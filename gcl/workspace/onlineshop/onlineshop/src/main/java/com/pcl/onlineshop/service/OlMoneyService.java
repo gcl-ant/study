@@ -9,4 +9,6 @@ public interface OlMoneyService {
     List<MoneyDto> queryMoneyListByAccountId(Integer userID);
 
     String withdraw(Integer userId, Integer outMoney);
+
+    String deposit(Integer userId, Integer inMoney);
 }
