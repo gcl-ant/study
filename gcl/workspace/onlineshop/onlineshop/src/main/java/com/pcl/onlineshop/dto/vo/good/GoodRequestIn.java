@@ -12,6 +12,9 @@ public class GoodRequestIn {
     @JsonProperty("good_id")
     private Integer id;
 
+    @JsonProperty("good_count")
+    private Integer count;
+
     @JsonProperty("status")
     private String status;
 

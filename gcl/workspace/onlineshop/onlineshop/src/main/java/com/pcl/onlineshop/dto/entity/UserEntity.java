@@ -8,7 +8,9 @@ import java.time.LocalDateTime;
 @Data
 public class UserEntity {
 
-    private int id;
+    private Integer id;
+
+    private Integer accoutId;
 
     private String sex;
 

@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.pcl.onlineshop.config.consts.WebConst.SUCCESS;
+import static com.pcl.onlineshop.controller.api.OlUserController.LOGIN_USER_ID;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
@@ -124,6 +125,24 @@ public class OlGoodController {
 
         ResponseBase out = new ResponseBase();
         Integer count = olGoodService.returnGood(goodRequestIn.getOrderId());
+
+        if (count == 1) {
+            out.setRequestResult("0");
+            return out;
+        }
+        out.setRequestResult("99");
+        return out;
+    }
+
+    @PostMapping(value = "/buy")
+    @UserIdCheckMethod
+    public ResponseBase buyGood(@RequestBody GoodRequestIn goodRequestIn,HttpSession httpSession) {
+
+        Integer userId = (Integer) httpSession.getAttribute(LOGIN_USER_ID);
+
+        ResponseBase out = new ResponseBase();
+
+        Integer count = olGoodService.purchaseGoods(goodRequestIn.getId(),userId,goodRequestIn.getCount());
 
         if (count == 1) {
             out.setRequestResult("0");

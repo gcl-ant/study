@@ -18,4 +18,6 @@ public interface OlGoodService {
 
 
     Integer returnGood(Integer orderId);
+
+    Integer purchaseGoods(Integer goodId, Integer userId, Integer purchaseGoodCount) ;
 }

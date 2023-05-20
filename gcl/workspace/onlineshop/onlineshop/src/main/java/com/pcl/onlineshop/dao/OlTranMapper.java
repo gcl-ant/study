@@ -1,6 +1,7 @@
 package com.pcl.onlineshop.dao;
 
 import com.pcl.onlineshop.dto.entity.OlTransEntity;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -39,4 +40,36 @@ public interface OlTranMapper {
             , @Param("status") Integer status
             , @Param("nowTime") LocalDateTime nowTime
             , @Param("serviceId") String serviceId);
+
+    @Insert(" INSERT INTO ol_tran (" +
+            " good_id" +
+            " ,tran_time " +
+            " ,in_money " +
+            " ,in_count " +
+            " ,created_date " +
+            " ,created_user " +
+            " ,update_date " +
+            " ,update_user " +
+            " ,status " +
+            " ,account_id " +
+            " ) VALUES ( " +
+            "  #{goodId} " +
+            " ,#{nowTime} " +
+            " ,#{money} " +
+            " ,#{purchaseGoodCount} " +
+            " ,#{nowTime} " +
+            " ,#{upUser} " +
+            " ,#{nowTime} " +
+            " ,#{upUser} " +
+            " ,#{status} " +
+            " ,#{accountId} " +
+            " ) ")
+    Integer insetOlTran(@Param("goodId") Integer goodId
+            , @Param("purchaseGoodCount") Integer purchaseGoodCount
+            , @Param("money") Integer money
+            , @Param("accountId") Integer accountId
+            , @Param("nowTime") LocalDateTime now
+            , @Param("upUser") String upUser
+            , @Param("status") String status
+    );
 }

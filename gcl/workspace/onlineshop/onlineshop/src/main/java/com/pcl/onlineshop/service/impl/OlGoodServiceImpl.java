@@ -43,11 +43,86 @@ public class OlGoodServiceImpl implements OlGoodService {
     @Autowired
     AccountMapper accountMapper;
 
+    @Autowired
+    OlUserMapper olUserMapper;
+
+    @Autowired
+    OlMoneyMapper olMoneyMapper;
+
     private static final String COMMENT_DEFAULT_MESSAGE = "ユーザーが何も話しません";
 
     private static final List<String> COMMENT_DIVISION_LIST = Arrays.asList("1", "2");
 
     private static final Logger logger = LogManager.getLogger(OlGoodServiceImpl.class);
+
+
+    //购买商品实现
+    @Override
+    @Transactional
+    public Integer purchaseGoods(Integer goodId, Integer userId, Integer purchaseGoodCount) {
+
+        //查看商品是否存在
+        GoodEntity good = olGoodMapper.searchGoodsById(goodId);
+        if (ObjectUtils.isEmpty(good)) {
+            throw new OlRuntimeException(Ol_USER_ERROR_0702);
+        }
+
+        if (ObjectUtils.isEmpty(good.getNumber()) || good.getNumber() < purchaseGoodCount) {
+            throw new OlRuntimeException(Ol_USER_ERROR_0703);
+        }
+
+        UserEntity userEntity = olUserMapper.queryUserById(userId);
+
+        if (ObjectUtils.isEmpty(userEntity)) {
+            throw new OlRuntimeException(Ol_USER_ERROR_0301);
+        }
+
+        // 0是订单创建完成
+        Integer updateStatusCount = olTranMapper.insetOlTran(
+                goodId
+                , purchaseGoodCount
+                , good.getOutPrice().intValue()
+                , userEntity.getAccoutId()
+                , LocalDateTime.now()
+                , "OlGoodServiceImpl.PurchaseGoods"
+                , "1");
+
+        if (ObjectUtils.isEmpty(updateStatusCount) || updateStatusCount == 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1103);
+        }
+
+        BigDecimal opeMoney = BigDecimal.valueOf((long) good.getOutPrice().intValue() * purchaseGoodCount);
+
+        AccountOpeEntity accountOpeEntity
+                = initAccountOpe(userEntity.getAccoutId(), opeMoney.intValue());
+
+        Integer count = accountOpeMapper.insertAccountOpe(accountOpeEntity);
+        if (ObjectUtils.isEmpty(count) || count == 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1103);
+        }
+        // 获取账户余额
+        MoneyEntity moneyEntity = olMoneyMapper.queryAccount(userId);
+
+        BigDecimal accountMoney = BigDecimal.valueOf(moneyEntity.getAccountMoney());
+
+        Integer opeAccountMoney = accountMoney.subtract(opeMoney).intValue();
+
+        if (opeAccountMoney < 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1104);
+        }
+        int updatedRows = olMoneyMapper.updateAccountMoney(userId,
+                BigDecimal.valueOf(opeAccountMoney), LocalDateTime.now(), "OlMoneyServiceImpl.withdraw");
+
+        if (ObjectUtils.isEmpty(updatedRows) || updatedRows == 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1104);
+        }
+
+        Integer buyCount = olGoodMapper.updateGoods(goodId, good.getNumber() - purchaseGoodCount);
+        if (ObjectUtils.isEmpty(buyCount) || buyCount == 0) {
+            throw new OlRuntimeException(Ol_USER_ERROR_1103);
+        }
+        return 1;
+    }
 
 
     @Override
@@ -64,7 +139,7 @@ public class OlGoodServiceImpl implements OlGoodService {
             throw new OlRuntimeException(Ol_USER_ERROR_1101);
         }
 
-        Integer updateStatusCount = olTranMapper.updateOrderStatus(orderId,4,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
+        Integer updateStatusCount = olTranMapper.updateOrderStatus(orderId, 4, LocalDateTime.now(), "OlGoodServiceImpl.returnGood");
 
         if (ObjectUtils.isEmpty(updateStatusCount) || updateStatusCount == 0) {
             throw new OlRuntimeException(Ol_USER_ERROR_1101);
@@ -77,7 +152,8 @@ public class OlGoodServiceImpl implements OlGoodService {
         }
 
         //account ope 0 出金 1 入金 2 退款
-        BigDecimal opeMoney = BigDecimal.valueOf(olTransEntity.getInCount() * olTransEntity.getInMoney());
+        BigDecimal opeMoney = BigDecimal.valueOf((long) olTransEntity.getInCount() * olTransEntity.getInMoney());
+
         AccountOpeEntity accountOpeEntity
                 = initAccountOpe(olTransEntity.getAccountId(), opeMoney.intValue());
         Integer count = accountOpeMapper.insertAccountOpe(accountOpeEntity);
@@ -94,7 +170,7 @@ public class OlGoodServiceImpl implements OlGoodService {
         }
 
         //用户退货开始  5是退货完成
-        Integer accountCont2 =olTranMapper.updateOrderStatus(orderId,5,LocalDateTime.now(),"OlGoodServiceImpl.returnGood");
+        Integer accountCont2 = olTranMapper.updateOrderStatus(orderId, 5, LocalDateTime.now(), "OlGoodServiceImpl.returnGood");
 
         if (ObjectUtils.isEmpty(accountCont2) || accountCont2 == 0) {
             throw new OlRuntimeException(Ol_USER_ERROR_1102);
@@ -215,7 +291,8 @@ public class OlGoodServiceImpl implements OlGoodService {
         AccountOpeEntity result = new AccountOpeEntity();
 
         result.setAccountId(accountId);
-        result.setOpeFlg("2");
+        //购买
+        result.setOpeFlg("3");
         result.setOpeMoney(opeMoney);
         result.setOpeTime(LocalDateTime.now());
         result.setCreatedDate(LocalDateTime.now());
