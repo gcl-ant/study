@@ -35,6 +35,17 @@ class OlGoodServiceImplTest {
     @Mock
     AccountMapper accountMapper;
 
+
+    @Test
+    void changeGoodConditionTest001() {
+        Mockito.when( olGoodMapper.changeGoodCondition(Mockito.any(),  Mockito.any())).thenReturn(null);
+        try {
+            olGoodService.changeGoodCondition(0,"1");
+        } catch (OlRuntimeException oe) {
+            assert oe.getCode().equals(Ol_USER_ERROR_0701.getCode());
+        }
+    }
+
     @Test
     void returnGoodTest001Error() {
 

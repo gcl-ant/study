@@ -133,7 +133,11 @@ public class OlUserMapperTest {
         );
         assert count == 1;
     }
-//
+//输入空字符不反馈测试——失败
+// 操作例：
+// https://www.cnblogs.com/grassLittle/p/17244232.html
+//https://blog.csdn.net/chanllenge/article/details/105127483
+    
 //    @Test
 //    public void testOlUserMapperUpdateUser006() {
 //        Integer count = userMapper.updateUser(
