@@ -1,5 +1,6 @@
 package com.pcl.onlineshop.config.ol.deal;
 
+import com.pcl.onlineshop.config.exception.AuthException;
 import com.pcl.onlineshop.config.exception.OlRuntimeException;
 import com.pcl.onlineshop.dto.vo.ResponseBase;
 import jakarta.servlet.http.HttpServletResponse;
@@ -7,6 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.io.IOException;
 
 @RestControllerAdvice
 public class OlExceptionHandler {
@@ -19,6 +22,12 @@ public class OlExceptionHandler {
     public ResponseBase dealOlException(OlRuntimeException ex, HttpServletResponse httpServletResponse){
         return getResponseBase(ex);
     }
+
+    @ExceptionHandler(value = AuthException.class)
+    public void dealAuthException(AuthException ex, HttpServletResponse httpServletResponse) throws IOException {
+        httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+    }
+
 
     @ExceptionHandler(value = Exception.class)
     public ResponseBase dealException(Exception ex, HttpServletResponse httpServletResponse){

@@ -22,7 +22,6 @@ function Login () {
       // 提示用户
       message.success('登录成功')
     }
-
   }
 
   return (
@@ -35,8 +34,8 @@ function Login () {
           validateTrigger={['onBlur', 'onChange']}
           initialValues={{
             remember: true,
-            mobile: 'xiaowang@gmail.com',
-            code: '123456'
+            mobile: '13811111111',
+            code: '246810'
           }}
           onFinish={onFinish}
         >

@@ -1,5 +1,6 @@
 package com.pcl.onlineshop.controller.api;
 
+import com.pcl.onlineshop.config.exception.AuthException;
 import com.pcl.onlineshop.config.ol.annotion.UserIdCheckMethod;
 import com.pcl.onlineshop.dto.UserDto;
 import com.pcl.onlineshop.dto.vo.ResponseBase;
@@ -36,12 +37,17 @@ public class OlUserController {
     @PostMapping(value = LOGIN_URL)
     public ResponseBase doLogin(@RequestBody UserRequestIn userRequestIn, HttpSession httpSession) {
         UserRequestOut requestOut = new UserRequestOut();
-        UserDto userDto = userService.login(userRequestIn.getUserName(), userRequestIn.getPassword());
-        requestOut.setUserName(userDto.getName());
-        requestOut.setRequestResult("0");
+        try {
+            UserDto userDto = userService.login(userRequestIn.getUserName(), userRequestIn.getPassword());
+            requestOut.setUserName(userDto.getName());
+            requestOut.setRequestResult("0");
 
-        //将用户的登录Id保存到session中
-        httpSession.setAttribute(LOGIN_USER_ID, userDto.getId());
+            //将用户的登录Id保存到session中
+            httpSession.setAttribute(LOGIN_USER_ID, userDto.getId());
+        } catch (Exception ex){
+            throw new AuthException();
+        }
+
         return requestOut;
     }
 
