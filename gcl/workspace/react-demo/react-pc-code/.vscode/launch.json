@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "name": "Launch",
+      "type": "firefox",
+      "url": "http://localhost:3000",
+      "request": "launch",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

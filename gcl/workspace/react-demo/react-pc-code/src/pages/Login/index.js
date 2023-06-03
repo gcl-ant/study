@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 // 导入样式文件
 import './index.scss'
 import { useStore } from '@/store'
+import { getToken } from '@/utils'
+
 function Login () {
   const { loginStore } = useStore()
   const navigate = useNavigate()
@@ -12,14 +14,15 @@ function Login () {
     // values：放置的是所有表单项中用户输入的内容
     // todo:登录
     const { mobile, code } = values
-    let flag = await loginStore.getToken({ mobile, code })
+    await loginStore.getMyToken({ mobile, code })
+    const isToken = getToken() || ''
     // 跳转首页
-    if (flag){
+    if (isToken) {
       navigate('/', { replace: true })
       // 提示用户
       message.success('登录成功')
     }
-   
+
   }
 
   return (
@@ -44,11 +47,11 @@ function Login () {
                 required: true,
                 message: '请输入邮箱',
               },
-              {
-                pattern: /^\w+@[a-z0-9]+.[a-z]{2,4}$/,
-                message: '请输入正确的邮箱',
-                validateTrigger: 'onBlur'
-              }
+              // {
+              //   pattern: /^\w+@[a-z0-9]+.[a-z]{2,4}$/,
+              //   message: '请输入正确的邮箱',
+              //   validateTrigger: 'onBlur'
+              // }
             ]}
           >
             <Input size="large" placeholder="请输入邮箱" />
