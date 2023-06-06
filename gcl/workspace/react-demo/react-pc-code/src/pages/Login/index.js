@@ -1,5 +1,5 @@
 import { Card, Form, Input, Checkbox, Button, message } from 'antd'
-import logo2 from '@/assets/pcl_logo.png'
+import loginlogo from '@/assets/pcl_loginlogo .png'
 import { useNavigate } from 'react-router-dom'
 // 导入样式文件
 import './index.scss'
@@ -27,7 +27,7 @@ function Login () {
   return (
     <div className="login">
       <Card className="login-container">
-        <img className="login-logo" src={logo2} alt="" />
+        <img className="login-logo" src={loginlogo} alt="" />
         {/* 登录表单 */}
         {/* 子项用到的触发事件 需要在Form中都声明一下才可以 */}
         <Form
