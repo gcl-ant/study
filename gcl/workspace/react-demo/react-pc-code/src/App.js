@@ -11,6 +11,7 @@ const Layout = lazy(() => import('./pages/Layout'))
 const Home = lazy(() => import('./pages/Home'))
 const Article = lazy(() => import('./pages/Article'))
 const Publish = lazy(() => import('./pages/Publish'))
+const GoodList = lazy(() => import('./pages/good/list'))
 
 function App () {
   return (
@@ -41,6 +42,7 @@ function App () {
               <Route index element={<Home />}></Route>
               <Route path='article' element={<Article />}></Route>
               <Route path='publish' element={<Publish />}></Route>
+              <Route path='good/list' element={<GoodList />}></Route>
             </Route>
             {/* 这个不需要 */}
             <Route path='/login' element={<Login />}></Route>

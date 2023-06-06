@@ -68,6 +68,9 @@ const GeekLayout = () => {
             <Menu.Item icon={<EditOutlined />} key="/publish">
               <Link to='/publish'> 发布文章</Link>
             </Menu.Item>
+            <Menu.Item  key="/good/list">
+              <Link to='/good/list'> 商品一览</Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="layout-content" style={{ padding: 20 }}>
