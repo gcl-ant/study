@@ -1,0 +1,33 @@
+@import 'antd/dist/antd.css';
+
+.cart {
+  background-color: #f5f5f5;
+  padding: 20px;
+
+  .cart-actions {
+    margin-bottom: 20px;
+  }
+
+  .ant-card {
+    .ant-card-head {
+      background-color: #fff;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .ant-card-body {
+      padding: 0;
+    }
+
+    .ant-breadcrumb {
+      margin-bottom: 20px;
+    }
+
+    .ant-table {
+      .ant-table-thead {
+        th {
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+}

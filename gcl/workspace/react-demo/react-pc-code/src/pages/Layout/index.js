@@ -5,7 +5,8 @@ import {
   HomeOutlined,
   DiffOutlined,
   EditOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  ShoppingCartOutlined
 } from '@ant-design/icons'
 import './index.scss'
 import { useStore } from '@/store'
@@ -62,14 +63,14 @@ const GeekLayout = () => {
             <Menu.Item icon={<HomeOutlined />} key="/">
               <Link to='/'>数据概览</Link>
             </Menu.Item>
-            <Menu.Item icon={<DiffOutlined />} key="/article">
-              <Link to="/article">内容管理</Link>
-            </Menu.Item>
             <Menu.Item icon={<EditOutlined />} key="/publish">
               <Link to='/publish'> 发布文章</Link>
             </Menu.Item>
             <Menu.Item  key="/good/list">
               <Link to='/good/list'> 商品一览</Link>
+            </Menu.Item>
+            <Menu.Item icon={< ShoppingCartOutlined />} key="/cart">
+              <Link to="/cart">购物车</Link>
             </Menu.Item>
           </Menu>
         </Sider>
