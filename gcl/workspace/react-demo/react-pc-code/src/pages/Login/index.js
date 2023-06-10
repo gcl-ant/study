@@ -1,5 +1,5 @@
 import { Card, Form, Input, Checkbox, Button, message } from 'antd'
-import loginlogo from '@/assets/pcl_loginlogo .png'
+import loginlogo from '@/assets/pcl_loginlogo.png'
 import { useNavigate } from 'react-router-dom'
 // 导入样式文件
 import './index.scss'

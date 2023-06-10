@@ -7,6 +7,7 @@ import com.pcl.onlineshop.dto.vo.ResponseBase;
 import com.pcl.onlineshop.dto.vo.user.UserRequestIn;
 import com.pcl.onlineshop.dto.vo.user.UserRequestOut;
 import com.pcl.onlineshop.service.OlUserService;
+import com.pcl.onlineshop.service.common.JwtService;
 import com.sun.net.httpserver.Authenticator;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,13 @@ import static com.pcl.onlineshop.config.consts.WebConst.SUCCESS;
 public class OlUserController {
 
     public static final String LOGIN_USER_ID = "userId";
+
+
     @Autowired
     OlUserService userService;
+
+    @Autowired
+    JwtService jwtService;
 
     @PostMapping(value = "/register/user")
     public ResponseBase register(@RequestBody UserRequestIn userRequestIn) {
@@ -39,11 +45,15 @@ public class OlUserController {
         UserRequestOut requestOut = new UserRequestOut();
         try {
             UserDto userDto = userService.login(userRequestIn.getUserName(), userRequestIn.getPassword());
-            requestOut.setUserName(userDto.getName());
+//            requestOut.setUserName(userDto.getName());
             requestOut.setRequestResult("0");
-
             //将用户的登录Id保存到session中
             httpSession.setAttribute(LOGIN_USER_ID, userDto.getId());
+
+            //调用JWTService生成JST TOKEN
+            String jwtToken = jwtService.createToken(String.valueOf(userDto.getId()));
+
+
         } catch (Exception ex){
             throw new AuthException();
         }

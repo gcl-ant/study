@@ -1,26 +1,41 @@
-import { Table, Card, Breadcrumb } from "antd";
-import { Link } from "react-router-dom";
-import "./index.scss";
-import { useState } from "react";
+import { Table, Card, Breadcrumb } from "antd"
+import { Link } from "react-router-dom"
+import { observer } from 'mobx-react-lite'
+import "./index.scss"
+import { useEffect, useState } from "react"
+import { http } from '@/utils'
 
-const Article = () => {
-  const [articleData, setArticleData] = useState({
+const Goods = () => {
+  const [goodData, setGoodData] = useState({
     list: [],
     count: 0,
-  });
+  })
 
   const [params, setParams] = useState({
     page: 1,
     per_page: 10,
-  });
+  })
+
+  // 获取商品列表
+  useEffect(() => {
+    const loadList = async () => {
+      const res = await http.get('/mp/articles', { params })
+      const { results, total_count } = res.data
+      setGoodData({
+        list: results,
+        count: total_count
+      })
+    }
+    loadList()
+  }, [params])
 
   // 翻页实现
   const pageChange = (page) => {
     setParams({
       ...params,
       page,
-    });
-  };
+    })
+  }
 
   const columns = [
     {
@@ -57,7 +72,7 @@ const Article = () => {
       title: "折扣",
       dataIndex: "discount_flg",
     }
-  ];
+  ]
 
   return (
     <div>
@@ -78,7 +93,7 @@ const Article = () => {
           columns={columns}
           pagination={{
             pageSize: params.per_page,
-            total: articleData.count,
+            total: goodData.count,
             onChange: pageChange,
             current: params.page,
           }}
@@ -86,7 +101,7 @@ const Article = () => {
         />
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default Article;
+export default observer(Goods)

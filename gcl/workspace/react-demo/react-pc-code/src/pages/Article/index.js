@@ -47,7 +47,7 @@ const Article = () => {
     const _params = {}
     // 格式化status
     _params.status = status
-   
+
     // 初始化频道
     if (channel_id) {
       _params.channel_id = channel_id

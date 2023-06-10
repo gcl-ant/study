@@ -7,7 +7,10 @@ import lombok.Data;
 @Data
 public class UserRequestOut extends ResponseBase {
 
-    @JsonProperty("user_name")
-    private String userName;
+    @JsonProperty("token")
+    private String token;
+
+    @JsonProperty("refresh_token")
+    private String refreshToken;
 
 }

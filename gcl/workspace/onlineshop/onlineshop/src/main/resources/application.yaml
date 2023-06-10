@@ -14,6 +14,10 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
-
+olShop:
+  jwt:
+    expired:
+      time: 5000
+    key: "ol_shop_key"
 
 
