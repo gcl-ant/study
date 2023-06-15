@@ -72,6 +72,9 @@ const GeekLayout = () => {
             <Menu.Item icon={< ShoppingCartOutlined />} key="/cart">
               <Link to="/cart">购物车</Link>
             </Menu.Item>
+            <Menu.Item icon={< EditOutlined />} key="/MoneyList">
+              <Link to="/MoneyList">入出金一览</Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="layout-content" style={{ padding: 20 }}>

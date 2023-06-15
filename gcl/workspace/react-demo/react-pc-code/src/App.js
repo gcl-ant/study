@@ -13,6 +13,7 @@ const Article = lazy(() => import('./pages/Article'))
 const Publish = lazy(() => import('./pages/Publish'))
 const GoodList = lazy(() => import('./pages/good/list'))
 const ShopCar = lazy(() => import('./pages/Cart'))
+const MoneyList = lazy(() => import('./pages/MoneyList'))
 
 function App () {
   return (
@@ -45,6 +46,7 @@ function App () {
               <Route path='publish' element={<Publish />}></Route>
               <Route path='good/list' element={<GoodList />}></Route>
               <Route path='cart' element={<ShopCar />}></Route>
+              <Route path='moneyList' element={<MoneyList />}></Route>
             </Route>
             {/* 这个不需要 */}
             <Route path='/login' element={<Login />}></Route>
