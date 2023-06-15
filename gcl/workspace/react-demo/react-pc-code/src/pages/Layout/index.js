@@ -64,9 +64,9 @@ const GeekLayout = () => {
               <Link to='/'>数据概览</Link>
             </Menu.Item>
             <Menu.Item icon={<EditOutlined />} key="/publish">
-              <Link to='/publish'> 发布文章</Link>
+              <Link to='/publish'> 添加商品</Link>
             </Menu.Item>
-            <Menu.Item  key="/good/list">
+            <Menu.Item key="/good/list">
               <Link to='/good/list'> 商品一览</Link>
             </Menu.Item>
             <Menu.Item icon={< ShoppingCartOutlined />} key="/cart">

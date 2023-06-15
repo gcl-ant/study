@@ -6,13 +6,13 @@ import {
   Button,
   Popconfirm,
   message,
-} from "antd";
-import { Link, useNavigate } from "react-router-dom";
-import { observer } from "mobx-react-lite";
-import "./index.scss";
-import { useEffect, useState } from "react";
-import { http } from "@/utils";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+} from "antd"
+import { Link, useNavigate } from "react-router-dom"
+import { observer } from "mobx-react-lite"
+import "./index.scss"
+import { useEffect, useState } from "react"
+import { http } from "@/utils"
+import { ShoppingCartOutlined } from "@ant-design/icons"
 
 
 const Goods = () => {
@@ -20,44 +20,44 @@ const Goods = () => {
     { id: 1, good_name: "レタス", price: 98, number: 50 },
     { id: 2, good_name: "キャベツ", price: 98, number: 50 },
     { id: 3, good_name: "パプリカ", price: 98, number: 50 },
-  ];
+  ]
 
   const [goodData, setGoodData] = useState({
     list: [],
     count: 0,
-  });
+  })
 
   const [params, setParams] = useState({
     page: 1,
     per_page: 10,
-  });
+  })
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const onConfirm = () => {
-    message.success("购物车加入成功");
-  
-  };
+    message.success("购物车加入成功")
+
+  }
 
   // 获取商品列表
   useEffect(() => {
     const loadList = async () => {
-      const res = await http.get("/mp/articles", { params });
-      const { results, total_count } = res.data;
+      const res = await http.get("/mp/articles", { params })
+      const { results, total_count } = res.data
       setGoodData({
         list: results,
         count: total_count,
-      });
-    };
-    loadList();
-  }, [params]);
+      })
+    }
+    loadList()
+  }, [params])
 
   // 翻页实现
   const pageChange = (page) => {
     setParams({
       ...params,
       page,
-    });
-  };
+    })
+  }
 
   const columns = [
     {
@@ -93,11 +93,11 @@ const Goods = () => {
               </Popconfirm>
             </Button>
           </Space>
-        );
+        )
       },
       fixed: "right",
     },
-  ];
+  ]
 
   return (
     <div>
@@ -127,10 +127,15 @@ const Goods = () => {
         />
       </Card>
       <Card>
-        <Button onClick={()=>navigate("/cart")}>查看购物车</Button>
+        <Button onClick={() => navigate("/cart")}>查看购物车</Button>
+        <Button onClick={() => navigate("/publish")}
+          size="large" type="primary" >
+
+          添加商品
+        </Button>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default observer(Goods);
+export default observer(Goods)

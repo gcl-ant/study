@@ -90,7 +90,7 @@ const Publish = () => {
 
     // 跳转列表 提示用户
     navigate('/article')
-    message.success(`${id ? '更新成功' : '发布成功'}`)
+    message.success(`${id ? '更新成功' : '添加成功'}`)
   }
 
   // 编辑功能
@@ -127,7 +127,7 @@ const Publish = () => {
             <Breadcrumb.Item>
               <Link to="/home">首页</Link>
             </Breadcrumb.Item>
-            <Breadcrumb.Item>{id ? '编辑' : '发布'}文章</Breadcrumb.Item>
+            <Breadcrumb.Item>{id ? '编辑' : '添加'}商品</Breadcrumb.Item>
           </Breadcrumb>
         }
       >
@@ -141,16 +141,16 @@ const Publish = () => {
           <Form.Item
             label="标题"
             name="title"
-            rules={[{ required: true, message: '请输入文章标题' }]}
+            rules={[{ required: true, message: '请输入商品标题' }]}
           >
-            <Input placeholder="请输入文章标题" style={{ width: 400 }} />
+            <Input placeholder="请输入商品标题" style={{ width: 400 }} />
           </Form.Item>
           <Form.Item
-            label="频道"
+            label="类别"
             name="channel_id"
-            rules={[{ required: true, message: '请选择文章频道' }]}
+            rules={[{ required: true, message: '请选择商品类别' }]}
           >
-            <Select placeholder="请选择文章频道" style={{ width: 400 }}>
+            <Select placeholder="请选择商品类别" style={{ width: 400 }}>
               {channelStore.channelList.map(item => (
                 <Option key={item.id} value={item.id}>{item.name}</Option>
               ))}
@@ -158,7 +158,7 @@ const Publish = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item label="封面">
+          <Form.Item label="图片">
             <Form.Item name="type">
               <Radio.Group onChange={radioChange}>
                 <Radio value={1}>单图</Radio>
@@ -188,9 +188,9 @@ const Publish = () => {
           {/* 这里的富文本组件 已经被Form.Item控制 */}
           {/* 它的输入内容 会在onFinished回调中收集起来 */}
           <Form.Item
-            label="内容"
+            label="简介"
             name="content"
-            rules={[{ required: true, message: '请输入文章内容' }]}
+            rules={[{ required: true, message: '请输入商品简介' }]}
           >
             <ReactQuill theme="snow" />
           </Form.Item>
@@ -198,7 +198,7 @@ const Publish = () => {
           <Form.Item wrapperCol={{ offset: 4 }}>
             <Space>
               <Button size="large" type="primary" htmlType="submit">
-                {id ? '更新' : '发布'}文章
+                {id ? '更新' : '添加'}商品
               </Button>
             </Space>
           </Form.Item>
